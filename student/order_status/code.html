@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Tracking</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#0d1c2f",
+                        "surface-tint": "#9d4300",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#bec5e5",
+                        "secondary-container": "#d8deff",
+                        "primary-container": "#f97316",
+                        "outline-variant": "#e0c0b1",
+                        "on-secondary-container": "#5a627e",
+                        "surface-dim": "#d9dadb",
+                        "secondary": "#565d79",
+                        "inverse-primary": "#ffb690",
+                        "on-tertiary-fixed-variant": "#3a485c",
+                        "outline": "#8c7164",
+                        "on-surface": "#191c1d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#783200",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "on-surface-variant": "#584237",
+                        "on-tertiary-container": "#253346",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#191c1d",
+                        "on-secondary-fixed-variant": "#3e4660",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-primary-fixed": "#341100",
+                        "tertiary-fixed-dim": "#b9c7e0",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#582200",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#d5e3fd",
+                        "background": "#f8f9fa",
+                        "on-secondary-fixed": "#131a33",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary": "#515f74",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#8d9bb2",
+                        "primary-fixed-dim": "#ffb690",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-high": "#e7e8e9",
+                        "primary-fixed": "#ffdbca",
+                        "primary": "#9d4300",
+                        "surface-container": "#edeeef"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "16px",
+                        "container-padding": "24px",
+                        "section-margin": "32px",
+                        "max-width": "480px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa; /* background */
+        }
+    </style>
+</head>
+<body class="flex justify-center min-h-screen bg-background">
+<div class="w-full max-w-max-width bg-surface relative pb-24 shadow-xl overflow-hidden min-h-screen">
+<!-- TopAppBar: Navy Header Overlay -->
+<header class="bg-on-tertiary-fixed h-[180px] w-full absolute top-0 left-0 z-0 rounded-b-[32px]"></header>
+<div class="relative z-10 flex flex-col pt-8 px-container-padding text-on-primary">
+<div class="flex items-center justify-between w-full mb-6">
+<button class="p-2 hover:bg-on-tertiary-fixed-variant transition-colors rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" data-icon="arrow_back" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-bold text-center flex-1">Trạng Thái Đơn Hàng</h1>
+<div class="w-10"></div> <!-- Spacer for alignment -->
+</div>
+</div>
+<!-- Main Content Card overlapping the header -->
+<main class="relative z-10 mx-container-padding mt-4 mb-24 pb-8">
+<div class="bg-surface-container-lowest rounded-3xl p-container-padding shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+<!-- Top Section: Illustration -->
+<div class="w-full h-40 bg-surface-container-lowest rounded-2xl mb-8 flex items-center justify-center overflow-hidden border border-surface-variant">
+<img alt="Food package ready" class="w-full h-full object-cover" data-alt="A clean, modern 3D illustration of a food delivery package ready for pickup. A bright orange paper bag with a subtle smile icon sits on a clean white surface. Soft, highly diffused studio lighting highlights the vibrant colors against a pristine, minimalist light gray background. The aesthetic is playful yet highly professional, matching a modern food delivery app's bright and energetic color palette." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+</div>
+<!-- Order Status Timeline -->
+<div class="mb-section-margin relative pl-4">
+<!-- Vertical Line -->
+<div class="absolute left-[27px] top-4 bottom-8 w-0.5 bg-surface-variant"></div>
+<div class="flex flex-col gap-6">
+<!-- Step 1 -->
+<div class="flex items-start relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 border-4 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="ml-4 flex-1 pt-1">
+<h3 class="text-body-lg font-body-lg font-bold text-on-surface">Đã xác nhận</h3>
+<p class="text-body-sm font-body-sm text-secondary">10:30 AM</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 border-4 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]" data-icon="skillet" style="font-variation-settings: 'FILL' 1;">skillet</span>
+</div>
+<div class="ml-4 flex-1 pt-1">
+<h3 class="text-body-lg font-body-lg font-bold text-on-surface">Đang chuẩn bị</h3>
+<p class="text-body-sm font-body-sm text-secondary">10:45 AM</p>
+</div>
+</div>
+<!-- Step 3 (Active) -->
+<div class="flex items-start relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest border-4 border-primary flex items-center justify-center shrink-0">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+</div>
+<div class="ml-4 flex-1 pt-1">
+<h3 class="text-body-lg font-body-lg font-bold text-primary">Đã hoàn thành</h3>
+<p class="text-body-sm font-body-sm text-primary">11:00 AM</p>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-surface-variant mb-6"/>
+<!-- Shop Contact Card -->
+<div class="mb-section-margin bg-surface rounded-2xl p-4 border border-surface-variant">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-variant">
+<img alt="Shop Avatar" class="w-full h-full object-cover" data-alt="A close-up, highly stylized portrait of a bowl of traditional Vietnamese Pho. The bowl is ceramic with elegant blue patterns. Rich, clear broth, perfectly cooked noodles, and vibrant green herbs. The lighting is warm and appetizing, casting soft shadows on a clean white marble table. The visual aesthetic is modern, high-end food photography meant for an upscale delivery app profile picture." src="https://lh3.googleusercontent.com/aida/ADBb0uhreCsWB55Tm_NkxFRXgnGZdaeFDLZ6xkdxgHVkm7hfrpbaf9RcurKEXJPPLXm4ZJABOTF00Ry1m-HcatxDD7p5NuAoh94jUyFspB37OXXNi9yrwPDM-5xj24TO9pBe4_rGxiP5OVKVwjfriyuRgZ_HT5cJ93CXFgiLn_L647Y7sZJUi2b2bGKhzVV7iA8apXelsH7q2MSN1LU-e0Xr_aXkfXyzu80emz5wJJtdiQA6cZiqXtV3glKHmXwjtdFriwWhMo5m-90CxJo"/>
+</div>
+<div class="flex-1">
+<h4 class="text-body-lg font-body-lg font-bold text-on-surface">Phở Hùng</h4>
+<p class="text-body-sm font-body-sm text-secondary">Đơn hàng #83920</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="call" style="font-variation-settings: 'FILL' 1;">call</span>
+                        Call Shop
+                    </button>
+</div>
+<!-- Order Summary -->
+<div class="bg-surface-bright rounded-2xl p-5 border border-surface-variant">
+<h4 class="text-body-lg font-body-lg font-bold text-on-surface mb-4">Order Summary</h4>
+<div class="flex justify-between items-center mb-3">
+<span class="text-body-sm font-body-sm text-on-surface"><span class="font-bold">1x</span> Phở Bò Đặc Biệt</span>
+<span class="text-body-sm font-body-sm text-on-surface">65.000đ</span>
+</div>
+<div class="flex justify-between items-center mb-3">
+<span class="text-body-sm font-body-sm text-on-surface"><span class="font-bold">2x</span> Quẩy</span>
+<span class="text-body-sm font-body-sm text-on-surface">10.000đ</span>
+</div>
+<hr class="border-surface-variant my-4 border-dashed"/>
+<div class="flex justify-between items-center mb-2">
+<span class="text-body-sm font-body-sm text-secondary">Subtotal</span>
+<span class="text-body-sm font-body-sm text-on-surface">75.000đ</span>
+</div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-body-sm font-body-sm text-secondary">Phí giao hàng</span>
+<span class="text-body-sm font-body-sm text-on-surface">15.000đ</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-surface-variant">
+<span class="text-body-lg font-body-lg font-bold text-on-surface">Total</span>
+<span class="text-headline-md font-headline-md text-primary">90.000đ</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 w-full flex justify-around items-center px-4 py-3 bg-surface-container-lowest dark:bg-surface-container-low max-w-max-width mx-auto z-50 rounded-t-3xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] md:hidden">
+<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="text-label-caps font-label-caps mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-xl px-4 py-1 scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="text-label-caps font-label-caps mt-1">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="shopping_cart" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+<span class="text-label-caps font-label-caps mt-1">Cart</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="text-label-caps font-label-caps mt-1">Profile</span>
+</div>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Doanh Thu - UniEats</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#515f74",
+                        "tertiary-container": "#8d9bb2",
+                        "secondary-fixed-dim": "#bec5e5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#d5e3fd",
+                        "inverse-surface": "#2e3132",
+                        "surface-tint": "#9d4300",
+                        "outline": "#8c7164",
+                        "on-tertiary-container": "#253346",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-secondary-fixed-variant": "#3e4660",
+                        "outline-variant": "#e0c0b1",
+                        "on-secondary-container": "#5a627e",
+                        "surface-dim": "#d9dadb",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#d8deff",
+                        "primary": "#9d4300",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#783200",
+                        "on-error": "#ffffff",
+                        "primary-container": "#f97316",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#3a485c",
+                        "on-primary-fixed": "#341100",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#b9c7e0",
+                        "on-secondary-fixed": "#131a33",
+                        "surface-container": "#edeeef",
+                        "on-surface": "#191c1d",
+                        "on-primary-container": "#582200",
+                        "on-surface-variant": "#584237",
+                        "secondary": "#565d79",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed": "#0d1c2f",
+                        "inverse-primary": "#ffb690",
+                        "on-background": "#191c1d",
+                        "surface-bright": "#f8f9fa",
+                        "primary-fixed-dim": "#ffb690",
+                        "primary-fixed": "#ffdbca",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-margin": "32px",
+                        "container-padding": "24px",
+                        "stack-gap": "16px",
+                        "max-width": "480px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-lg min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-secondary dark:bg-on-secondary-fixed text-primary dark:text-primary-fixed fixed top-0 w-full h-48 rounded-b-[40px] z-0">
+<div class="flex justify-between items-center px-container-padding pt-8 w-full max-w-[480px] mx-auto">
+<button class="text-on-primary hover:opacity-80 transition-opacity active:scale-95 flex items-center justify-center p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md text-on-primary font-bold">Doanh Thu</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-on-primary">
+<img alt="Vendor Profile Picture" class="w-full h-full object-cover" data-alt="A modern, high-contrast vendor profile picture featuring a smiling chef in a clean, bright commercial kitchen. The lighting is soft and flattering, creating a professional and welcoming mood. The background is slightly blurred, emphasizing the subject. The color palette incorporates subtle warm tones, aligning with the vibrant energy of the overarching UI design." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-[480px] mx-auto px-container-padding pt-32 pb-section-margin flex flex-col gap-section-margin">
+<!-- Summary Card overlapping header -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_10px_30px_0_rgba(0,0,0,0.08)] flex flex-col items-center justify-center gap-2">
+<p class="text-body-sm font-body-sm text-tertiary uppercase tracking-wider">Hôm Nay</p>
+<h2 class="text-display-lg font-display-lg text-primary-container">1,250,000đ</h2>
+<div class="flex items-center gap-1 text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-label-caps font-label-caps">+12% so với hôm qua</span>
+</div>
+</div>
+<!-- Weekly Chart Section -->
+<section class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_10px_30px_0_rgba(0,0,0,0.08)]">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-6">Biểu Đồ Tuần</h3>
+<div class="w-full h-48 rounded-xl overflow-hidden bg-surface-container relative">
+<!-- Abstract Representation of a Line Chart using a placeholder image -->
+<img alt="Weekly sales trend chart" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A stylized, modern line chart representing weekly sales trends. The chart features a vibrant orange line ascending smoothly across a soft, light gray background. Subtle grid lines add structure without visual clutter. The aesthetic is clean, data-driven, and highly legible, complementing the minimalist, high-contrast mobile UI design." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+<!-- Overlay gradient to fade bottom -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent pointer-events-none"></div>
+</div>
+<div class="flex justify-between items-center mt-4 text-label-caps font-label-caps text-tertiary px-2">
+<span>T2</span>
+<span>T3</span>
+<span>T4</span>
+<span class="text-primary-container font-bold bg-primary-container/10 px-2 py-1 rounded-full">T5</span>
+<span>T6</span>
+<span>T7</span>
+<span>CN</span>
+</div>
+</section>
+<!-- Recent Transactions Section -->
+<section class="flex flex-col gap-stack-gap">
+<h3 class="text-headline-md font-headline-md text-on-surface px-2">Giao dịch gần đây</h3>
+<div class="bg-surface-container-lowest rounded-3xl shadow-[0_10px_30px_0_rgba(0,0,0,0.08)] overflow-hidden">
+<!-- Transaction Item 1 -->
+<div class="flex items-center justify-between p-4 border-b border-surface-variant last:border-b-0">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined fill" data-icon="receipt_long" data-weight="fill">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<span class="text-body-lg font-body-lg font-semibold text-on-surface">#ORD-092</span>
+<span class="text-body-sm font-body-sm text-tertiary">14:30 • Hoàn thành</span>
+</div>
+</div>
+<span class="text-body-lg font-body-lg font-bold text-on-surface">+85,000đ</span>
+</div>
+<!-- Transaction Item 2 -->
+<div class="flex items-center justify-between p-4 border-b border-surface-variant last:border-b-0">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined fill" data-icon="receipt_long" data-weight="fill">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<span class="text-body-lg font-body-lg font-semibold text-on-surface">#ORD-091</span>
+<span class="text-body-sm font-body-sm text-tertiary">13:15 • Hoàn thành</span>
+</div>
+</div>
+<span class="text-body-lg font-body-lg font-bold text-on-surface">+120,000đ</span>
+</div>
+<!-- Transaction Item 3 -->
+<div class="flex items-center justify-between p-4 border-b border-surface-variant last:border-b-0">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined fill" data-icon="receipt_long" data-weight="fill">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<span class="text-body-lg font-body-lg font-semibold text-on-surface">#ORD-090</span>
+<span class="text-body-sm font-body-sm text-tertiary">11:45 • Hoàn thành</span>
+</div>
+</div>
+<span class="text-body-lg font-body-lg font-bold text-on-surface">+65,000đ</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-surface-container-lowest text-primary dark:text-primary-container text-label-caps font-label-caps shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] shadow-lg fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] flex justify-around items-center py-3 px-6 md:hidden">
+<button class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 transition-all duration-200 rounded-lg p-2">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span>Orders</span>
+</button>
+<button class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 transition-all duration-200 rounded-lg p-2">
+<span class="material-symbols-outlined mb-1" data-icon="restaurant_menu">restaurant_menu</span>
+<span>Menu</span>
+</button>
+<button class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 transition-all duration-200 rounded-lg p-2">
+<span class="material-symbols-outlined mb-1" data-icon="storefront">storefront</span>
+<span>Shop</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined fill mb-1" data-icon="monitoring" data-weight="fill">monitoring</span>
+<span>Stats</span>
+</button>
+</nav>
+</body></html>

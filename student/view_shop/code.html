@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UniEats - Shop Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#584237",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb690",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e0c0b1",
+                        "on-tertiary-fixed-variant": "#3a485c",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e1e3e4",
+                        "primary-fixed": "#ffdbca",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-background": "#191c1d",
+                        "secondary": "#565d79",
+                        "on-primary-container": "#582200",
+                        "tertiary-container": "#8d9bb2",
+                        "on-primary-fixed": "#341100",
+                        "on-secondary-fixed": "#131a33",
+                        "on-surface": "#191c1d",
+                        "primary": "#9d4300",
+                        "secondary-fixed-dim": "#bec5e5",
+                        "tertiary-fixed-dim": "#b9c7e0",
+                        "surface-bright": "#f8f9fa",
+                        "primary-fixed-dim": "#ffb690",
+                        "outline": "#8c7164",
+                        "on-primary-fixed-variant": "#783200",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-container": "#f97316",
+                        "surface-container": "#edeeef",
+                        "tertiary-fixed": "#d5e3fd",
+                        "surface-container-high": "#e7e8e9",
+                        "surface": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary": "#515f74",
+                        "on-tertiary-fixed": "#0d1c2f",
+                        "on-tertiary-container": "#253346",
+                        "on-secondary-container": "#5a627e",
+                        "inverse-surface": "#2e3132",
+                        "surface-tint": "#9d4300",
+                        "secondary-container": "#d8deff",
+                        "on-secondary-fixed-variant": "#3e4660",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "16px",
+                        "max-width": "480px",
+                        "section-margin": "32px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#0B132B] font-body-lg text-body-lg text-on-surface antialiased flex justify-center">
+<!-- Main Mobile Container -->
+<main class="w-full max-w-max-width bg-background min-h-screen relative shadow-2xl overflow-hidden flex flex-col">
+<!-- Hero Header -->
+<div class="relative h-72 w-full flex-shrink-0 bg-[#0B132B]">
+<img alt="Restaurant Interior" class="absolute inset-0 w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADiLJwv0VRP_zB652mksLxiuwqHEpd1AA8Ek6qS1Qf1xqj5gYL4kcPYke6_G8QtexZhOJ23XJSiLwzr9OmbSlX_4g3Cbh1t9eDfLgDHL0e1XJtwBexHoDXR-f5iLlZU4UDR1AUFLHrayRcpqqfd4vV9YV7zVDKBzZcHcmPLmwsQYlFx3pNfypvmdwScdjx-NoyASajKoAdl8GTdCw4K7eSPEki6nrKfhJwP2-tu4uOFHqOPlkMR6aU3NBo9iqdf84wKCh1gre3OtiR"/>
+<!-- Gradient Overlay for better contrast -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/20"></div>
+<!-- Header Actions -->
+<div class="absolute top-0 left-0 w-full flex justify-between items-center p-4 z-10">
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<button aria-label="Favorite" class="w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm flex items-center justify-center shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<!-- Shop Information Card -->
+<div class="relative -mt-8 bg-surface-container-lowest rounded-t-[32px] px-container-padding py-8 shadow-[0_-8px_24px_-4px_rgba(0,0,0,0.1)] z-20 flex-grow rounded-b-none pb-32">
+<div class="flex justify-between items-start mb-4">
+<h1 class="font-display-lg text-display-lg font-bold text-on-secondary-fixed leading-tight pr-4">Cơm Tấm Sài Gòn</h1>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<div class="flex items-center gap-1 bg-surface-container-high px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[#F59E0B] text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline-md text-headline-md text-on-surface text-sm">4.8</span>
+</div>
+</div>
+</div>
+<div class="inline-flex items-center gap-1 text-[#16a34a] bg-green-50 px-2 py-1 rounded-md mb-6">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span class="font-semibold text-sm">Đang mở cửa</span>
+</div>
+<div class="flex flex-col gap-4 text-on-surface-variant font-body-sm text-body-lg">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[24px] text-primary mt-0.5">location_on</span>
+<span class="leading-relaxed">Khu Canteen A, Ký túc xá Khu B Đại học Quốc gia, TP. Thủ Đức</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[24px] text-primary">schedule</span>
+<span>08:00 - 21:00</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-surface-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-3">Về chúng tôi</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+    Mang hương vị cơm tấm truyền thống Sài Gòn đến với sinh viên. Chúng tôi tự hào phục vụ những dĩa cơm sườn nướng than hoa thơm lừng, chả trứng béo ngậy cùng nước mắm chua ngọt đặc trưng, mang lại cảm giác ấm cúng như bữa cơm gia đình ngay tại khuôn viên trường. Nguyên liệu được chọn lọc kỹ càng, đảm bảo vệ sinh an toàn thực phẩm.
+</p>
+</div>
+</div>
+<!-- Sticky Bottom Action -->
+<div class="absolute bottom-0 left-0 w-full p-4 z-40 bg-surface-container-lowest border-t border-surface-container shadow-[0_-4px_16px_rgba(0,0,0,0.05)]">
+<button class="w-full bg-[#F97316] text-white rounded-xl p-4 flex justify-center items-center gap-2 shadow-lg active:scale-[0.98] transition-transform font-headline-md text-body-lg font-semibold">
+<span>Xem Menu Quán</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</main>
+</body></html>

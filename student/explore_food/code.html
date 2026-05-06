@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>UniEats - Student Homepage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#0d1c2f",
+                    "surface-tint": "#9d4300",
+                    "surface-bright": "#f8f9fa",
+                    "secondary-fixed-dim": "#bec5e5",
+                    "secondary-container": "#d8deff",
+                    "primary-container": "#f97316",
+                    "outline-variant": "#e0c0b1",
+                    "on-secondary-container": "#5a627e",
+                    "surface-dim": "#d9dadb",
+                    "secondary": "#565d79",
+                    "inverse-primary": "#ffb690",
+                    "on-tertiary-fixed-variant": "#3a485c",
+                    "outline": "#8c7164",
+                    "on-surface": "#191c1d",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#783200",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8f9fa",
+                    "on-surface-variant": "#584237",
+                    "on-tertiary-container": "#253346",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#191c1d",
+                    "on-secondary-fixed-variant": "#3e4660",
+                    "secondary-fixed": "#dbe1ff",
+                    "on-primary-fixed": "#341100",
+                    "tertiary-fixed-dim": "#b9c7e0",
+                    "surface-container-low": "#f3f4f5",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#582200",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#d5e3fd",
+                    "background": "#f8f9fa",
+                    "on-secondary-fixed": "#131a33",
+                    "inverse-on-surface": "#f0f1f2",
+                    "tertiary": "#515f74",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#8d9bb2",
+                    "primary-fixed-dim": "#ffb690",
+                    "inverse-surface": "#2e3132",
+                    "surface-container-high": "#e7e8e9",
+                    "primary-fixed": "#ffdbca",
+                    "primary": "#9d4300",
+                    "surface-container": "#edeeef"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap": "16px",
+                    "container-padding": "24px",
+                    "section-margin": "32px",
+                    "max-width": "480px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "30px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-lg text-body-lg min-h-screen flex justify-center pb-20 md:pb-0">
+<div class="w-full max-w-max-width bg-surface-bright relative shadow-[0_0_40px_rgba(0,0,0,0.05)] md:min-h-screen overflow-hidden">
+<!-- Header Background (Navy) -->
+<div class="bg-on-tertiary-fixed h-[200px] w-full absolute top-0 left-0 rounded-b-[32px] z-0"></div>
+<!-- TopAppBar (Mapped from JSON) -->
+<header class="relative z-10 w-full flex items-center justify-between px-container-padding pt-6 pb-2 w-full max-w-max-width mx-auto">
+<div class="flex items-center gap-3">
+<button class="text-on-primary hover:bg-on-tertiary-fixed-variant transition-colors p-2 rounded-full -ml-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-bold text-on-primary">UniEats</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden flex items-center justify-center border-2 border-on-primary">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+</div>
+</header>
+<!-- Greeting & Search (Overlapping Header) -->
+<div class="relative z-10 px-container-padding pt-2 pb-6">
+<h2 class="text-display-lg font-display-lg text-on-primary mb-4">Xin chào, Alex!</h2>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-12 bg-surface-container-lowest rounded-xl pl-12 pr-4 border-none text-on-surface placeholder:text-on-surface-variant shadow-[0_4px_12px_rgba(0,0,0,0.05)] focus:ring-2 focus:ring-primary-container outline-none transition-shadow text-body-lg font-body-lg" placeholder="Bạn muốn ăn gì hôm nay?" type="text"/>
+</div>
+</div>
+<!-- Main Content Canvas (Overlapping Card) -->
+<main class="relative z-20 bg-surface-container-lowest rounded-t-[32px] min-h-[600px] shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] mt-2">
+<!-- Sticky Top Tab Bar -->
+<div class="sticky top-0 bg-surface-container-lowest/90 backdrop-blur-md z-30 rounded-t-[32px] pt-4 px-container-padding border-b border-surface-variant">
+<div class="flex gap-6 pb-2">
+<button class="text-on-surface-variant text-body-lg font-body-lg font-semibold py-2">
+                        Quán Ăn
+                    </button>
+<button class="text-primary-container text-body-lg font-body-lg font-bold py-2 relative">
+                        Món Ngon
+                        <div class="absolute bottom-[-9px] left-0 w-full h-[3px] bg-primary-container rounded-t-full"></div>
+</button>
+</div>
+</div>
+<!-- Food Feed -->
+<div class="p-container-padding flex flex-col gap-stack-gap">
+<!-- Feed Item 1 -->
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex flex-col group">
+<div class="w-full h-[220px] relative overflow-hidden">
+<img alt="Bánh Mì Thịt Nướng" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="A delicious, high-quality close-up of a Bánh Mì Thịt Nướng (Vietnamese grilled pork sandwich) loaded with fresh herbs, pickled carrots, and cucumber in a crusty baguette. The lighting is bright and inviting, typical of a modern light-mode food delivery app, highlighting the vibrant colors and fresh textures. The background is slightly blurred to focus entirely on the appetizing sandwich. A deep navy (#0B132B) and vibrant orange (#F97316) color palette is subtly reflected in the ambient scene." src="https://lh3.googleusercontent.com/aida/ADBb0uhreCsWB55Tm_NkxFRXgnGZdaeFDLZ6xkdxgHVkm7hfrpbaf9RcurKEXJPPLXm4ZJABOTF00Ry1m-HcatxDD7p5NuAoh94jUyFspB37OXXNi9yrwPDM-5xj24TO9pBe4_rGxiP5OVKVwjfriyuRgZ_HT5cJ93CXFgiLn_L647Y7sZJUi2b2bGKhzVV7iA8apXelsH7q2MSN1LU-e0Xr_aXkfXyzu80emz5wJJtdiQA6cZiqXtV3glKHmXwjtdFriwWhMo5m-90CxJo"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-caps font-label-caps text-on-surface">4.8</span>
+</div>
+</div>
+<div class="p-4 flex justify-between items-start gap-4">
+<div class="flex-1">
+<h3 class="text-headline-md font-headline-md text-on-surface line-clamp-1 mb-1">Bánh Mì Thịt Nướng</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span class="text-body-sm font-body-sm">Cô Ba Bakery</span>
+</div>
+<span class="text-headline-md font-headline-md font-bold text-primary">25.000đ</span>
+</div>
+<button class="w-12 h-12 bg-primary-container hover:bg-primary text-on-primary rounded-xl flex items-center justify-center transition-colors shadow-sm shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Feed Item 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex flex-col group">
+<div class="w-full h-[220px] relative overflow-hidden">
+<img alt="Phở Bò Tái Lăn" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="A steaming bowl of authentic Vietnamese Pho with thinly sliced rare beef, fresh rice noodles, and a rich, aromatic broth. Garnished with basil, bean sprouts, and lime on the side. The image is brightly lit, emphasizing the freshness of the ingredients within a modern, light-themed aesthetic. The composition is clean and appetizing, with subtle hints of vibrant orange in the surrounding decor, aligning with the UniEats brand identity." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-caps font-label-caps text-on-surface">4.9</span>
+</div>
+</div>
+<div class="p-4 flex justify-between items-start gap-4">
+<div class="flex-1">
+<h3 class="text-headline-md font-headline-md text-on-surface line-clamp-1 mb-1">Phở Bò Tái Lăn</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span class="text-body-sm font-body-sm">Phở Gia Truyền</span>
+</div>
+<span class="text-headline-md font-headline-md font-bold text-primary">45.000đ</span>
+</div>
+<button class="w-12 h-12 bg-primary-container hover:bg-primary text-on-primary rounded-xl flex items-center justify-center transition-colors shadow-sm shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Feed Item 3 -->
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex flex-col group mb-20">
+<div class="w-full h-[220px] relative overflow-hidden">
+<img alt="Cơm Tấm Sườn Trứng" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="A beautifully plated portion of Cơm Tấm (broken rice) topped with a perfectly grilled pork chop, a sunny-side-up egg, and fresh cucumber slices. The meal is presented on a clean, modern white plate against a light background. Bright, natural lighting enhances the rich caramelization of the pork and the vibrancy of the egg yolk. The overall visual style is crisp and appetizing, suitable for a premium food delivery interface." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-caps font-label-caps text-on-surface">4.7</span>
+</div>
+</div>
+<div class="p-4 flex justify-between items-start gap-4">
+<div class="flex-1">
+<h3 class="text-headline-md font-headline-md text-on-surface line-clamp-1 mb-1">Cơm Tấm Sườn Trứng</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span class="text-body-sm font-body-sm">Cơm Tấm Đêm</span>
+</div>
+<span class="text-headline-md font-headline-md font-bold text-primary">35.000đ</span>
+</div>
+<button class="w-12 h-12 bg-primary-container hover:bg-primary text-on-primary rounded-xl flex items-center justify-center transition-colors shadow-sm shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mapped from JSON) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 w-full flex justify-around items-center px-4 py-3 bg-surface-container-lowest shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] rounded-t-3xl z-50 max-w-max-width mx-auto">
+<!-- Active: Home -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-caps font-label-caps">Home</span>
+</button>
+<!-- Inactive -->
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:bg-surface-container-high transition-all rounded-xl">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
+<span class="text-label-caps font-label-caps">Orders</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:bg-surface-container-high transition-all rounded-xl">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+<span class="text-label-caps font-label-caps">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:bg-surface-container-high transition-all rounded-xl">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="text-label-caps font-label-caps">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>

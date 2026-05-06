@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Shop Info Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#515f74",
+                        "tertiary-container": "#8d9bb2",
+                        "secondary-fixed-dim": "#bec5e5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#d5e3fd",
+                        "inverse-surface": "#2e3132",
+                        "surface-tint": "#9d4300",
+                        "outline": "#8c7164",
+                        "on-tertiary-container": "#253346",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-secondary-fixed-variant": "#3e4660",
+                        "outline-variant": "#e0c0b1",
+                        "on-secondary-container": "#5a627e",
+                        "surface-dim": "#d9dadb",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#d8deff",
+                        "primary": "#9d4300",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#783200",
+                        "on-error": "#ffffff",
+                        "primary-container": "#f97316",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#3a485c",
+                        "on-primary-fixed": "#341100",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#b9c7e0",
+                        "on-secondary-fixed": "#131a33",
+                        "surface-container": "#edeeef",
+                        "on-surface": "#191c1d",
+                        "on-primary-container": "#582200",
+                        "on-surface-variant": "#584237",
+                        "secondary": "#565d79",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed": "#0d1c2f",
+                        "inverse-primary": "#ffb690",
+                        "on-background": "#191c1d",
+                        "surface-bright": "#f8f9fa",
+                        "primary-fixed-dim": "#ffb690",
+                        "primary-fixed": "#ffdbca",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-margin": "32px",
+                        "container-padding": "24px",
+                        "stack-gap": "16px",
+                        "max-width": "480px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa;
+        }
+        /* Custom Toggle Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #f97316;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #f97316;
+        }
+        .toggle-checkbox {
+            right: 0;
+            z-index: 1;
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased text-on-background relative min-h-screen pb-24 mx-auto max-w-max-width bg-surface shadow-2xl">
+<!-- TopAppBar JSON Component (Shell Layout Adjusted for Main Content Overlap) -->
+<header class="fixed top-0 w-full max-w-max-width h-48 rounded-b-[40px] z-0 bg-secondary dark:bg-on-secondary-fixed left-1/2 -translate-x-1/2 flex justify-between items-start px-container-padding pt-8">
+<button aria-label="Menu" class="text-on-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[28px]" data-icon="menu">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-black text-on-primary text-center flex-1">Thông Tin Quán</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-on-primary">
+<!-- Placeholder for leading_avatar from JSON -->
+<img alt="Vendor Profile Picture" class="w-full h-full object-cover" data-alt="A close up, high quality studio portrait of a friendly university food vendor smiling warmly. Bright, even lighting highlights their face. They are wearing a clean, modern uniform. The background is a soft, blurred light gray, fitting a professional app profile picture." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-10 pt-28 px-container-padding">
+<!-- Floating Card Container -->
+<div class="bg-surface-container-lowest rounded-[32px] p-container-padding shadow-[0_12px_30px_rgba(0,0,0,0.08)] mb-section-margin relative overflow-hidden">
+<!-- Decorative Header Image inside Card -->
+<div class="h-32 -mx-container-padding -mt-container-padding mb-6 relative">
+<img alt="Shop Header Cover" class="w-full h-full object-cover" data-alt="A bright, inviting header image of a modern university cafe interior. Sunlight streams through large windows onto clean, light wood tables. The atmosphere is bustling but organized, fitting a high-contrast modern UI style. Vibrant orange accents hint at the brand identity." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+</div>
+<!-- Status Toggle -->
+<div class="flex items-center justify-between mb-8 pb-6 border-b border-surface-variant">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Trạng Thái</h2>
+<p class="text-body-sm font-body-sm text-tertiary mt-1">Đang mở cửa nhận đơn</p>
+</div>
+<div class="relative inline-block w-14 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-7 h-7 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-200 ease-in-out transform translate-x-full" id="toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-7 rounded-full bg-primary-container cursor-pointer transition-colors duration-200 ease-in-out" for="toggle"></label>
+</div>
+</div>
+<!-- Form -->
+<form class="flex flex-col gap-stack-gap">
+<!-- Shop Name -->
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-on-surface uppercase" for="shopName">Tên Quán</label>
+<input class="w-full bg-[#F3F4F6] rounded-xl px-4 py-3 text-body-lg font-body-lg text-on-background placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container border-none" id="shopName" type="text" value="Cơm Tấm Cô Ba"/>
+</div>
+<!-- Address -->
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-on-surface uppercase" for="shopAddress">Địa Chỉ</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary-container" data-icon="location_on">location_on</span>
+<input class="w-full bg-[#F3F4F6] rounded-xl pl-12 pr-4 py-3 text-body-lg font-body-lg text-on-background placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container border-none" id="shopAddress" type="text" value="Khu B, Làng Đại Học"/>
+</div>
+</div>
+<!-- Operating Hours -->
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-on-surface uppercase">Giờ Hoạt Động</label>
+<div class="flex items-center gap-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary-container" data-icon="schedule">schedule</span>
+<input class="w-full bg-[#F3F4F6] rounded-xl pl-12 pr-4 py-3 text-body-lg font-body-lg text-on-background border-none focus:ring-2 focus:ring-primary-container text-center" type="text" value="07:00"/>
+</div>
+<span class="text-on-surface-variant">-</span>
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary-container" data-icon="schedule">schedule</span>
+<input class="w-full bg-[#F3F4F6] rounded-xl pl-12 pr-4 py-3 text-body-lg font-body-lg text-on-background border-none focus:ring-2 focus:ring-primary-container text-center" type="text" value="21:00"/>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="flex flex-col gap-2 mt-4">
+<label class="text-label-caps font-label-caps text-on-surface uppercase" for="shopDesc">Mô Tả</label>
+<textarea class="w-full bg-[#F3F4F6] rounded-xl px-4 py-3 text-body-lg font-body-lg text-on-background placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container border-none resize-none" id="shopDesc" rows="3">Chuyên các món cơm tấm sườn bì chả truyền thống, phục vụ sinh viên nhanh chóng, giá cả phải chăng.</textarea>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4 mt-6">
+<button class="w-full bg-primary-container text-on-primary py-4 rounded-xl text-body-lg font-body-lg font-bold hover:opacity-90 transition-opacity active:scale-95 shadow-md" type="button">
+                        Lưu Thay Đổi
+                    </button>
+<button class="w-full py-4 text-error text-body-sm font-body-sm font-semibold hover:underline bg-transparent" type="button">
+                        Xóa Quán
+                    </button>
+</div>
+</form>
+</div>
+</main>
+<!-- BottomNavBar JSON Component -->
+<!-- Active state logic applied to "Shop" (index 2) as it matches "Shop Info Management" -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50 rounded-t-xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] bg-surface dark:bg-surface-container-lowest flex justify-around items-center py-3 px-6 md:hidden">
+<!-- Orders (Inactive) -->
+<a class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 transition-all duration-200 rounded-lg p-2 min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="text-label-caps font-label-caps">Orders</span>
+</a>
+<!-- Menu (Inactive) -->
+<a class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 transition-all duration-200 rounded-lg p-2 min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="text-label-caps font-label-caps">Menu</span>
+</a>
+<!-- Shop (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-90 transition-all duration-200 min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="text-label-caps font-label-caps font-bold">Shop</span>
+</a>
+<!-- Stats (Inactive) -->
+<a class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 transition-all duration-200 rounded-lg p-2 min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="monitoring">monitoring</span>
+<span class="text-label-caps font-label-caps">Stats</span>
+</a>
+</nav>
+</body></html>

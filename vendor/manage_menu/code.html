@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>UniEats - Menu Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#515f74",
+                      "tertiary-container": "#8d9bb2",
+                      "secondary-fixed-dim": "#bec5e5",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#d5e3fd",
+                      "inverse-surface": "#2e3132",
+                      "surface-tint": "#9d4300",
+                      "outline": "#8c7164",
+                      "on-tertiary-container": "#253346",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#e7e8e9",
+                      "on-secondary-fixed-variant": "#3e4660",
+                      "outline-variant": "#e0c0b1",
+                      "on-secondary-container": "#5a627e",
+                      "surface-dim": "#d9dadb",
+                      "surface-variant": "#e1e3e4",
+                      "secondary-container": "#d8deff",
+                      "primary": "#9d4300",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#783200",
+                      "on-error": "#ffffff",
+                      "primary-container": "#f97316",
+                      "surface": "#f8f9fa",
+                      "on-tertiary-fixed-variant": "#3a485c",
+                      "on-primary-fixed": "#341100",
+                      "surface-container-low": "#f3f4f5",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#b9c7e0",
+                      "on-secondary-fixed": "#131a33",
+                      "surface-container": "#edeeef",
+                      "on-surface": "#191c1d",
+                      "on-primary-container": "#582200",
+                      "on-surface-variant": "#584237",
+                      "secondary": "#565d79",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface-container-highest": "#e1e3e4",
+                      "secondary-fixed": "#dbe1ff",
+                      "on-tertiary-fixed": "#0d1c2f",
+                      "inverse-primary": "#ffb690",
+                      "on-background": "#191c1d",
+                      "surface-bright": "#f8f9fa",
+                      "primary-fixed-dim": "#ffb690",
+                      "primary-fixed": "#ffdbca",
+                      "background": "#f8f9fa"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "3xl": "1.5rem",
+              },
+              "spacing": {
+                      "section-margin": "32px",
+                      "container-padding": "24px",
+                      "stack-gap": "16px",
+                      "max-width": "480px"
+              },
+              "fontFamily": {
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "30px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* background */
+        }
+        
+        /* Hide scrollbar for tabs */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen relative flex flex-col items-center">
+<div class="w-full max-w-max-width min-h-screen bg-surface relative pb-24 shadow-2xl">
+<!-- TopAppBar -->
+<header class="bg-secondary dark:bg-on-secondary-fixed text-primary dark:text-primary-fixed fixed top-0 w-full h-48 rounded-b-[40px] z-0 max-w-max-width">
+<div class="flex justify-between items-center px-container-padding pt-8 w-full max-w-[480px] mx-auto">
+<button aria-label="Menu" class="w-10 h-10 flex items-center justify-center text-on-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-black text-on-primary text-center absolute left-1/2 -translate-x-1/2">Thực Đơn</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-on-primary/20 flex-shrink-0">
+<img alt="Vendor Profile Picture" class="w-full h-full object-cover" data-alt="A close up portrait photo of a university food vendor wearing a clean white apron, smiling softly in a brightly lit modern food court setting. The lighting is high key and energetic. The overall style is modern and high-contrast, perfectly suited for a vibrant university food ordering app. The color palette incorporates crisp whites, soft warm tones, and energetic lighting." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="relative z-10 pt-28 px-container-padding w-full h-full pb-20">
+<!-- Glassmorphism Card overlapping the header -->
+<div class="bg-surface-container-lowest rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] p-container-padding min-h-[60vh] flex flex-col gap-stack-gap">
+<!-- Horizontal Tabs (Segmented Control style) -->
+<div class="flex items-center space-x-2 overflow-x-auto hide-scrollbar pb-2">
+<button class="flex-shrink-0 bg-primary-container text-on-primary px-6 py-2 rounded-full text-label-caps font-label-caps whitespace-nowrap shadow-sm hover:opacity-90 transition-opacity active:scale-95">Món Chính</button>
+<button class="flex-shrink-0 bg-surface-container text-on-surface-variant px-6 py-2 rounded-full text-label-caps font-label-caps whitespace-nowrap hover:bg-surface-container-highest transition-colors active:scale-95">Đồ Uống</button>
+<button class="flex-shrink-0 bg-surface-container text-on-surface-variant px-6 py-2 rounded-full text-label-caps font-label-caps whitespace-nowrap hover:bg-surface-container-highest transition-colors active:scale-95">Ăn Vặt</button>
+</div>
+<!-- Menu Items List -->
+<div class="flex flex-col gap-4 mt-2">
+<!-- Item 1 -->
+<div class="flex items-center p-3 rounded-2xl bg-surface hover:bg-surface-container-low transition-colors border border-surface-variant group">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Bánh Mì Thịt Nướng" class="w-full h-full object-cover" data-alt="A highly appetizing, top-down shot of a freshly prepared Vietnamese Banh Mi sandwich filled with grilled pork, fresh herbs, and pickled vegetables. The sandwich sits on a clean, bright white plate. The lighting is bright and warm, highlighting the crispy texture of the bread and the vibrant colors of the filling. The scene is styled for a modern, high-contrast university food delivery app, focusing on appetite appeal." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+</div>
+<div class="ml-4 flex-grow">
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">Bánh Mì Thịt Nướng</h3>
+<p class="text-body-sm font-body-sm text-primary-container font-bold mt-1">25.000đ</p>
+</div>
+<div class="flex space-x-2 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-error-container text-error flex items-center justify-center hover:bg-[#ffb4ab] active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center p-3 rounded-2xl bg-surface hover:bg-surface-container-low transition-colors border border-surface-variant group">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Cơm Tấm Sườn Bì" class="w-full h-full object-cover" data-alt="A delicious, high-quality photograph of a plate of Vietnamese Com Tam (Broken Rice) topped with a perfectly grilled pork chop, shredded pork skin, and a fried egg. The dish is presented on a minimalist white plate against a clean, light surface. The lighting is high-key and appetizing, emphasizing the rich, savory tones of the meat. The aesthetic perfectly matches a modern, energetic food ordering interface." src="https://lh3.googleusercontent.com/aida/ADBb0ugmsX4D8RcMWo_XOMpeD_SW6wbDtuhBJOkhBp48r6bc9ZY6TS_XDMc8cbiGTJ_Pwc6VSchZJ0qiiORT7jBWiwxAH36seAebxFLGgzcClC5AQqvpE1ZHqfaEsCWGHC7OGu3KsalBKsWiOpGYQELsO1wae0LyvcpIksExnEs6FFzDruTPaufa_p1RLh3AdPvY84Jitsc9YAj_4ENSVytmb1HBrby7qQr4yUGK5nsXNqHY_J7I1bxbXIsAj1cJtwfEpWOevMqCaaCVew"/>
+</div>
+<div class="ml-4 flex-grow">
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">Cơm Tấm Sườn Bì</h3>
+<p class="text-body-sm font-body-sm text-primary-container font-bold mt-1">35.000đ</p>
+</div>
+<div class="flex space-x-2 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-error-container text-error flex items-center justify-center hover:bg-[#ffb4ab] active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center p-3 rounded-2xl bg-surface hover:bg-surface-container-low transition-colors border border-surface-variant group">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Bún Bò Huế" class="w-full h-full object-cover" data-alt="A steamy, vibrant bowl of Bun Bo Hue, a spicy Vietnamese beef noodle soup, served in a modern ceramic bowl. The broth is a rich, fiery orange, garnished with fresh green scallions and herbs. The bowl sits on a pristine, bright background. The high-contrast lighting makes the colors pop, creating intense appetite appeal suitable for a sleek, contemporary food app designed for students." src="https://lh3.googleusercontent.com/aida/ADBb0uhreCsWB55Tm_NkxFRXgnGZdaeFDLZ6xkdxgHVkm7hfrpbaf9RcurKEXJPPLXm4ZJABOTF00Ry1m-HcatxDD7p5NuAoh94jUyFspB37OXXNi9yrwPDM-5xj24TO9pBe4_rGxiP5OVKVwjfriyuRgZ_HT5cJ93CXFgiLn_L647Y7sZJUi2b2bGKhzVV7iA8apXelsH7q2MSN1LU-e0Xr_aXkfXyzu80emz5wJJtdiQA6cZiqXtV3glKHmXwjtdFriwWhMo5m-90CxJo"/>
+</div>
+<div class="ml-4 flex-grow">
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">Bún Bò Huế</h3>
+<p class="text-body-sm font-body-sm text-primary-container font-bold mt-1">40.000đ</p>
+</div>
+<div class="flex space-x-2 opacity-80 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-error-container text-error flex items-center justify-center hover:bg-[#ffb4ab] active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="absolute bottom-24 right-6 w-14 h-14 bg-primary-container text-on-primary rounded-2xl shadow-lg flex items-center justify-center hover:opacity-90 active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-surface dark:bg-surface-container-lowest z-50 rounded-t-xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)]">
+<div class="flex justify-around items-center py-3 px-6">
+<!-- Orders (Inactive) -->
+<button class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 duration-200 w-16 h-12 rounded-xl">
+<span class="material-symbols-outlined mb-1">receipt_long</span>
+<span class="text-[10px] font-bold tracking-wide">Orders</span>
+</button>
+<!-- Menu (Active) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="text-[10px] font-bold tracking-wide text-primary">Menu</span>
+</button>
+<!-- Shop (Inactive) -->
+<button class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 duration-200 w-16 h-12 rounded-xl">
+<span class="material-symbols-outlined mb-1">storefront</span>
+<span class="text-[10px] font-bold tracking-wide">Shop</span>
+</button>
+<!-- Stats (Inactive) -->
+<button class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 duration-200 w-16 h-12 rounded-xl">
+<span class="material-symbols-outlined mb-1">monitoring</span>
+<span class="text-[10px] font-bold tracking-wide">Stats</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

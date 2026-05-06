@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Giỏ Hàng - UniEats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#9d4300",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "outline": "#8c7164",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#783200",
+                        "surface-bright": "#f8f9fa",
+                        "primary-container": "#f97316",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#515f74",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#131a33",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface-variant": "#584237",
+                        "on-tertiary-fixed-variant": "#3a485c",
+                        "surface": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5a627e",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3e4660",
+                        "on-primary-fixed": "#341100",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-container": "#8d9bb2",
+                        "primary-fixed": "#ffdbca",
+                        "background": "#f8f9fa",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-container": "#253346",
+                        "on-surface": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-fixed-dim": "#b9c7e0",
+                        "secondary": "#565d79",
+                        "secondary-fixed": "#dbe1ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#0d1c2f",
+                        "on-primary-container": "#582200",
+                        "primary-fixed-dim": "#ffb690",
+                        "inverse-primary": "#ffb690",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#bec5e5",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container": "#edeeef",
+                        "outline-variant": "#e0c0b1",
+                        "tertiary-fixed": "#d5e3fd",
+                        "surface-tint": "#9d4300",
+                        "secondary-container": "#d8deff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "16px",
+                        "section-margin": "32px",
+                        "max-width": "480px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .soft-deep-shadow {
+            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased font-sans flex justify-center min-h-screen pb-[80px]">
+<div class="w-full max-w-max-width relative bg-surface-bright min-h-screen flex flex-col shadow-xl overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-on-tertiary-fixed w-full h-32 rounded-b-[32px] flex items-center justify-between px-container-padding pt-6 relative z-0 flex-shrink-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl cursor-pointer hover:bg-on-tertiary-fixed-variant transition-colors p-2 rounded-full" data-icon="menu">menu</span>
+</div>
+<h1 class="text-headline-md font-headline-md font-bold text-on-primary">Giỏ Hàng</h1>
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">person</span>
+</div>
+</header>
+<!-- Main Content Area - Overlapping Header -->
+<main class="flex-grow px-container-padding -mt-8 relative z-10 flex flex-col gap-stack-gap pb-12 overflow-y-auto">
+<!-- Shop Group Card 1 -->
+<div class="bg-surface-container-lowest rounded-[32px] p-container-padding soft-deep-shadow flex flex-col gap-4 w-full">
+<!-- Header -->
+<div class="flex justify-between items-center w-full">
+<div class="flex items-center gap-3">
+<img alt="A small circular avatar showing a close up of a Vietnamese food stall sign for Com Tam Sai Gon, bright daylight, vibrant colors, modern UI aesthetic." class="w-10 h-10 rounded-full object-cover" data-alt="A small circular avatar showing a close up of a Vietnamese food stall sign for Com Tam Sai Gon, bright daylight, vibrant colors, modern UI aesthetic. The image fits perfectly in a small circular container with deep navy background behind it. Soft lighting emphasizes the text on the sign." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+<h2 class="text-headline-md font-headline-md text-on-surface">Cơm Tấm Sài Gòn</h2>
+</div>
+<button class="text-error hover:bg-error-container p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<!-- Item 1 -->
+<div class="flex gap-4 items-center">
+<img alt="A square thumbnail of Com Tam, Vietnamese broken rice with grilled pork, bright overhead lighting, clean white plate, high contrast modern UI food photography." class="w-20 h-20 rounded-xl object-cover" data-alt="A square thumbnail of Com Tam, Vietnamese broken rice with grilled pork, bright overhead lighting, clean white plate, high contrast modern UI food photography. The food is styled perfectly, looking appetizing with vibrant greens from cucumber and rich brown from the pork." src="https://lh3.googleusercontent.com/aida/ADBb0ugmsX4D8RcMWo_XOMpeD_SW6wbDtuhBJOkhBp48r6bc9ZY6TS_XDMc8cbiGTJ_Pwc6VSchZJ0qiiORT7jBWiwxAH36seAebxFLGgzcClC5AQqvpE1ZHqfaEsCWGHC7OGu3KsalBKsWiOpGYQELsO1wae0LyvcpIksExnEs6FFzDruTPaufa_p1RLh3AdPvY84Jitsc9YAj_4ENSVytmb1HBrby7qQr4yUGK5nsXNqHY_J7I1bxbXIsAj1cJtwfEpWOevMqCaaCVew"/>
+<div class="flex-grow flex flex-col gap-1">
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">Cơm Tấm Sườn Bì</h3>
+<p class="text-primary font-bold text-body-lg font-body-lg">55.000đ</p>
+</div>
+<!-- Quantity Adjuster -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 gap-2">
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="text-body-sm font-body-sm font-semibold text-on-surface min-w-[1ch] text-center">1</span>
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 items-center">
+<img alt="A square thumbnail of Cha Trung, a Vietnamese steamed egg meatloaf slice, bright studio lighting, clean background, appetizing high contrast UI food photography." class="w-20 h-20 rounded-xl object-cover" data-alt="A square thumbnail of Cha Trung, a Vietnamese steamed egg meatloaf slice, bright studio lighting, clean background, appetizing high contrast UI food photography. The slice shows off its ingredients clearly, golden yellow top layer and savory filling below." src="https://lh3.googleusercontent.com/aida/ADBb0uhreCsWB55Tm_NkxFRXgnGZdaeFDLZ6xkdxgHVkm7hfrpbaf9RcurKEXJPPLXm4ZJABOTF00Ry1m-HcatxDD7p5NuAoh94jUyFspB37OXXNi9yrwPDM-5xj24TO9pBe4_rGxiP5OVKVwjfriyuRgZ_HT5cJ93CXFgiLn_L647Y7sZJUi2b2bGKhzVV7iA8apXelsH7q2MSN1LU-e0Xr_aXkfXyzu80emz5wJJtdiQA6cZiqXtV3glKHmXwjtdFriwWhMo5m-90CxJo"/>
+<div class="flex-grow flex flex-col gap-1">
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">Chả Trứng Extra</h3>
+<p class="text-primary font-bold text-body-lg font-body-lg">10.000đ</p>
+</div>
+<!-- Quantity Adjuster -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 gap-2">
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="text-body-sm font-body-sm font-semibold text-on-surface min-w-[1ch] text-center">1</span>
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<!-- Footer -->
+<hr class="border-t border-dashed border-surface-variant my-2 w-full"/>
+<div class="flex justify-between items-center w-full mb-2">
+<span class="text-body-lg font-body-lg text-on-surface-variant">Tổng cộng (2 món):</span>
+<span class="text-headline-md font-headline-md font-bold text-on-surface">65.000đ</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-bold py-3 rounded-xl hover:bg-primary transition-colors flex items-center justify-center gap-2">
+                    Thanh toán đơn này
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Shop Group Card 2 -->
+<div class="bg-surface-container-lowest rounded-[32px] p-container-padding soft-deep-shadow flex flex-col gap-4 w-full">
+<!-- Header -->
+<div class="flex justify-between items-center w-full">
+<div class="flex items-center gap-3">
+<img alt="A small circular avatar showing a bubble tea cup graphic for Tra Sua Co Ba, bright sunny lighting, modern vibrant UI food app aesthetic." class="w-10 h-10 rounded-full object-cover" data-alt="A small circular avatar showing a bubble tea cup graphic for Tra Sua Co Ba, bright sunny lighting, modern vibrant UI food app aesthetic. Clean lines, a pop of warm color against a neutral background." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+<h2 class="text-headline-md font-headline-md text-on-surface">Trà Sữa Cô Ba</h2>
+</div>
+<button class="text-error hover:bg-error-container p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<!-- Item 1 -->
+<div class="flex gap-4 items-center">
+<img alt="A square thumbnail of traditional milk tea with boba pearls in a clear plastic cup, condensation on the outside, bright studio lighting, refreshing modern UI food photography." class="w-20 h-20 rounded-xl object-cover" data-alt="A square thumbnail of traditional milk tea with boba pearls in a clear plastic cup, condensation on the outside, bright studio lighting, refreshing modern UI food photography. The rich amber color of the tea contrasts beautifully with the dark boba pearls at the bottom." src="https://lh3.googleusercontent.com/aida/ADBb0ugCvGIW2e1uRGCpXKu1bV6O7QLJBra3B1mzlcLIFig8V20WvxUO3nSQb-Z1UV1Q07QFT6YUGQ0XP92y50V9DIso7oOAFPqBtl476Yhy6XiS9tp4g0qLSEbMIJrPBwXyR8D4JypHAu0JyRB09nmSpf4Rad7Awu8hr8T6e_QGFB0_q0Wl2pN2o6IijbcrvTNMAf2DI0ERyEar5SGpccvM4x0wnXyLhvs_nPltnhrQJnNwdhXApM-ojYijLRHo"/>
+<div class="flex-grow flex flex-col gap-1">
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">Trà Sữa Truyền Thống</h3>
+<p class="text-primary font-bold text-body-lg font-body-lg">30.000đ</p>
+</div>
+<!-- Quantity Adjuster -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 gap-2">
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="text-body-sm font-body-sm font-semibold text-on-surface min-w-[1ch] text-center">1</span>
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-lowest rounded text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<!-- Footer -->
+<hr class="border-t border-dashed border-surface-variant my-2 w-full"/>
+<div class="flex justify-between items-center w-full mb-2">
+<span class="text-body-lg font-body-lg text-on-surface-variant">Tổng cộng (1 món):</span>
+<span class="text-headline-md font-headline-md font-bold text-on-surface">30.000đ</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-bold py-3 rounded-xl hover:bg-primary transition-colors flex items-center justify-center gap-2">
+                    Thanh toán đơn này
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 w-full flex justify-around items-center px-4 py-3 bg-surface-container-lowest shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] rounded-t-3xl z-50 max-w-max-width mx-auto">
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="text-label-caps font-label-caps">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="text-label-caps font-label-caps">Orders</span>
+</button>
+<!-- Active State for Cart -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 scale-90 transition-all duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_cart" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="text-label-caps font-label-caps font-bold">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="text-label-caps font-label-caps">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cửa Hàng Của Tôi - UniEats Vendor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#515f74",
+                        "tertiary-container": "#8d9bb2",
+                        "secondary-fixed-dim": "#bec5e5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#d5e3fd",
+                        "inverse-surface": "#2e3132",
+                        "surface-tint": "#9d4300",
+                        "outline": "#8c7164",
+                        "on-tertiary-container": "#253346",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-secondary-fixed-variant": "#3e4660",
+                        "outline-variant": "#e0c0b1",
+                        "on-secondary-container": "#5a627e",
+                        "surface-dim": "#d9dadb",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#d8deff",
+                        "primary": "#9d4300",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#783200",
+                        "on-error": "#ffffff",
+                        "primary-container": "#f97316",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#3a485c",
+                        "on-primary-fixed": "#341100",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#b9c7e0",
+                        "on-secondary-fixed": "#131a33",
+                        "surface-container": "#edeeef",
+                        "on-surface": "#191c1d",
+                        "on-primary-container": "#582200",
+                        "on-surface-variant": "#584237",
+                        "secondary": "#0B132B", /* Adjusted to match specific prompt request while keeping naming structure */
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed": "#0d1c2f",
+                        "inverse-primary": "#ffb690",
+                        "on-background": "#191c1d",
+                        "surface-bright": "#f8f9fa",
+                        "primary-fixed-dim": "#ffb690",
+                        "primary-fixed": "#ffdbca",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-margin": "32px",
+                        "container-padding": "24px",
+                        "stack-gap": "16px",
+                        "max-width": "480px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "display-lg": ["Inter", "sans-serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa; /* background */
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #f8f9fa;
+            position: relative;
+            min-height: 100vh;
+            box-shadow: 0 0 40px rgba(0,0,0,0.05);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 80px; /* Space for bottom nav */
+        }
+        
+        /* Ambient Shadow for Cards */
+        .ambient-shadow {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Hide scrollbar for cleaner look in lists */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background">
+<div class="app-container">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full h-48 rounded-b-[40px] z-0 bg-secondary flex justify-between items-center px-container-padding pt-8 max-w-[480px] mx-auto">
+<button class="flex items-center justify-center p-2 rounded-full hover:opacity-80 transition-opacity active:scale-95 transition-transform text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md text-on-primary font-bold">Cửa Hàng Của Tôi</h1>
+<button class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<img alt="Vendor Profile Picture" class="w-full h-full object-cover" data-alt="A close-up, professional portrait of a young Vietnamese university student smiling warmly. The student is wearing a neat, casual outfit suitable for a campus vendor. The background is slightly blurred showing a vibrant university campus on a sunny day. The lighting is bright and inviting, creating a modern light-mode aesthetic with high contrast and natural colors." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 relative z-10 px-container-padding pt-32 pb-24">
+<!-- White Card Overlapping Header -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 ambient-shadow min-h-[500px]">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-headline-md font-headline-md text-on-surface">Danh sách cửa hàng</h2>
+<span class="text-body-sm font-body-sm text-tertiary">2 Cửa hàng</span>
+</div>
+<!-- List of Shops -->
+<div class="flex flex-col gap-4 no-scrollbar">
+<!-- Shop Item 1 -->
+<div class="flex items-center p-3 rounded-2xl bg-surface border border-surface-variant transition-transform hover:-translate-y-1 hover:shadow-md cursor-pointer group">
+<div class="w-16 h-16 rounded-xl overflow-hidden mr-4 flex-shrink-0">
+<img alt="Bánh Mì Sài Gòn Thumbnail" class="w-full h-full object-cover" data-alt="A mouth-watering, vibrant close-up shot of a traditional Vietnamese Bánh Mì sandwich filled with grilled pork, fresh cilantro, cucumbers, and pickled carrots. The sandwich rests on a clean, modern wooden cutting board. The lighting is bright and appetizing, highlighting the crispiness of the baguette and the fresh colors of the ingredients, perfectly suiting a modern high-contrast food app aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="text-body-lg font-body-lg font-bold text-on-surface truncate">Bánh Mì Sài Gòn</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-[#E8F5E9] text-[#2E7D32]">Mở Cửa</span>
+</div>
+<p class="text-body-sm font-body-sm text-tertiary truncate flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                            Gate 2, University
+                        </p>
+</div>
+<button class="ml-3 px-4 py-2 bg-primary-container text-on-primary text-body-sm font-body-sm font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                        Quản Lý
+                    </button>
+</div>
+<!-- Shop Item 2 -->
+<div class="flex items-center p-3 rounded-2xl bg-surface border border-surface-variant transition-transform hover:-translate-y-1 hover:shadow-md cursor-pointer group opacity-80">
+<div class="w-16 h-16 rounded-xl overflow-hidden mr-4 flex-shrink-0 filter grayscale-[50%]">
+<img alt="Cà Phê Sinh Viên Thumbnail" class="w-full h-full object-cover" data-alt="A refreshing, top-down shot of a classic Vietnamese iced coffee with milk (Cà phê sữa đá) in a tall glass, with condensation on the outside. It sits on a minimal white marble table next to a pair of stylish sunglasses. The lighting is bright and clear, casting soft shadows, fitting perfectly into a clean, modern high-contrast UI design." src="https://lh3.googleusercontent.com/aida/ADBb0ugmsX4D8RcMWo_XOMpeD_SW6wbDtuhBJOkhBp48r6bc9ZY6TS_XDMc8cbiGTJ_Pwc6VSchZJ0qiiORT7jBWiwxAH36seAebxFLGgzcClC5AQqvpE1ZHqfaEsCWGHC7OGu3KsalBKsWiOpGYQELsO1wae0LyvcpIksExnEs6FFzDruTPaufa_p1RLh3AdPvY84Jitsc9YAj_4ENSVytmb1HBrby7qQr4yUGK5nsXNqHY_J7I1bxbXIsAj1cJtwfEpWOevMqCaaCVew"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="text-body-lg font-body-lg font-bold text-on-surface truncate">Cà Phê Sinh Viên</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-surface-variant text-tertiary">Đóng Cửa</span>
+</div>
+<p class="text-body-sm font-body-sm text-tertiary truncate flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                            Library Block B
+                        </p>
+</div>
+<button class="ml-3 px-4 py-2 bg-surface-container-high text-on-surface text-body-sm font-body-sm font-bold rounded-lg hover:bg-surface-variant active:scale-95 transition-all">
+                        Quản Lý
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Action Button -->
+<div class="fixed bottom-[80px] w-full max-w-[480px] px-container-padding z-40 bg-gradient-to-t from-background to-transparent pt-8 pb-4 pointer-events-none">
+<button class="w-full py-4 bg-primary-container text-on-primary text-body-lg font-body-lg font-bold rounded-xl ambient-shadow hover:opacity-90 active:scale-95 transition-all pointer-events-auto flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">add</span>
+            Tạo Quán Mới
+        </button>
+</div>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] flex justify-around items-center py-3 px-6 z-50 rounded-t-xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] bg-surface">
+<button class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 duration-200 p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
+<span class="text-label-caps font-label-caps">Orders</span>
+</button>
+<button class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 duration-200 p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">restaurant_menu</span>
+<span class="text-label-caps font-label-caps">Menu</span>
+</button>
+<!-- Active State: "Shop" matches intent of "Shop Selection" -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="text-label-caps font-label-caps font-bold">Shop</span>
+</button>
+<button class="flex flex-col items-center justify-center text-tertiary hover:bg-surface-container-high transition-colors active:scale-90 duration-200 p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">monitoring</span>
+<span class="text-label-caps font-label-caps">Stats</span>
+</button>
+</nav>
+</div>
+</body></html>

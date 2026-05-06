@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Student Profile - UniEats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#515f74",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-container": "#f97316",
+                        "on-surface": "#191c1d",
+                        "inverse-primary": "#ffb690",
+                        "tertiary-fixed": "#d5e3fd",
+                        "surface-tint": "#9d4300",
+                        "surface": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#0d1c2f",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#d8deff",
+                        "tertiary-container": "#8d9bb2",
+                        "on-secondary-container": "#5a627e",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbca",
+                        "primary": "#9d4300",
+                        "surface-dim": "#d9dadb",
+                        "outline-variant": "#e0c0b1",
+                        "on-secondary-fixed-variant": "#3e4660",
+                        "on-secondary-fixed": "#131a33",
+                        "inverse-on-surface": "#f0f1f2",
+                        "background": "#f8f9fa",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#bec5e5",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#253346",
+                        "surface-bright": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface-variant": "#584237",
+                        "on-primary-fixed": "#341100",
+                        "on-primary-fixed-variant": "#783200",
+                        "on-background": "#191c1d",
+                        "surface-container-high": "#e7e8e9",
+                        "outline": "#8c7164",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#ffb690",
+                        "on-primary-container": "#582200",
+                        "on-tertiary-fixed-variant": "#3a485c",
+                        "inverse-surface": "#2e3132",
+                        "secondary": "#565d79",
+                        "tertiary-fixed-dim": "#b9c7e0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "brand-navy": "#0B132B",
+                        "brand-orange": "#F97316"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "2rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "section-margin": "32px",
+                        "stack-gap": "16px",
+                        "container-padding": "24px",
+                        "max-width": "480px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Inter", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"]
+                    },
+                    fontSize: {
+                        "display-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    },
+                    boxShadow: {
+                        'soft-deep': '0 8px 30px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa; /* background */
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen font-body-lg text-body-lg text-on-background max-w-max-width mx-auto relative overflow-x-hidden pb-24 shadow-2xl bg-surface-container-low">
+<!-- Header Backdrop -->
+<div class="absolute top-0 left-0 right-0 h-64 bg-brand-navy z-0"></div>
+<!-- Top App Bar Content (Extracted from JSON, custom styling for this screen) -->
+<header class="relative z-10 w-full px-container-padding pt-12 pb-8 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-4">
+<!-- Not strictly top app bar, but fits the visual spec -->
+<h1 class="text-display-lg font-display-lg text-white">Tài khoản</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-20 flex-1 px-4 w-full pb-section-margin">
+<!-- Overlapping Main Card -->
+<div class="bg-surface-container-lowest rounded-[32px] p-container-padding shadow-soft-deep mt-[-20px] mb-6 relative">
+<!-- User Info Section -->
+<div class="flex flex-col items-center mb-8 relative">
+<div class="relative w-24 h-24 mb-4">
+<img alt="A realistic photographic portrait of a young male university student, Alex Nguyen, looking slightly off-camera with a friendly expression. He is wearing casual, modern university attire. The lighting is soft and natural, suggesting an outdoor campus environment or bright indoor study area. The color palette is vibrant yet professional, fitting a high-contrast modern UI design system." class="w-full h-full object-cover rounded-full shadow-md border-4 border-surface-container-lowest" data-alt="A realistic photographic portrait of a young male university student, Alex Nguyen, looking slightly off-camera with a friendly expression. He is wearing casual, modern university attire. The lighting is soft and natural, suggesting an outdoor campus environment or bright indoor study area. The color palette is vibrant yet professional, fitting a high-contrast modern UI design system." src="https://lh3.googleusercontent.com/aida/ADBb0ugCvGIW2e1uRGCpXKu1bV6O7QLJBra3B1mzlcLIFig8V20WvxUO3nSQb-Z1UV1Q07QFT6YUGQ0XP92y50V9DIso7oOAFPqBtl476Yhy6XiS9tp4g0qLSEbMIJrPBwXyR8D4JypHAu0JyRB09nmSpf4Rad7Awu8hr8T6e_QGFB0_q0Wl2pN2o6IijbcrvTNMAf2DI0ERyEar5SGpccvM4x0wnXyLhvs_nPltnhrQJnNwdhXApM-ojYijLRHo"/>
+<button class="absolute bottom-0 right-0 bg-brand-orange text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">edit</span>
+</button>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-1">Alex Nguyen</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-1">alex.nguyen@university.edu</p>
+<p class="text-body-sm font-body-sm text-secondary bg-surface-container py-1 px-3 rounded-full mt-1">Tòa nhà: KTX Khu A</p>
+</div>
+<!-- Expense Dashboard Card -->
+<div class="bg-[#FFF3E0] rounded-2xl p-5 mb-8 shadow-sm">
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface mb-1">Chi tiêu tháng này</h3>
+<div class="text-[32px] font-bold text-brand-orange mb-4 leading-tight tracking-tight">850.000đ</div>
+<!-- Mini Bar Chart / Progress Area -->
+<div class="space-y-2">
+<div class="flex justify-between text-label-caps font-label-caps text-on-surface-variant">
+<span>Tuần 1</span>
+<span>Tuần 2</span>
+<span>Tuần 3</span>
+<span>Tuần 4</span>
+</div>
+<div class="flex gap-2 h-16 items-end">
+<div class="bg-brand-orange/40 w-full rounded-t-sm" style="height: 60%;"></div>
+<div class="bg-brand-orange/60 w-full rounded-t-sm" style="height: 80%;"></div>
+<div class="bg-brand-orange w-full rounded-t-sm" style="height: 100%;"></div>
+<div class="bg-surface-dim w-full rounded-t-sm" style="height: 20%;"></div>
+</div>
+</div>
+</div>
+<!-- Action Menu -->
+<div class="flex flex-col gap-1">
+<!-- Menu Item -->
+<button class="flex items-center justify-between w-full py-4 px-2 hover:bg-surface-container-low rounded-xl transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<span class="text-body-lg font-body-lg font-semibold text-on-surface">Phương thức thanh toán</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+<div class="h-[1px] bg-surface-container mx-2"></div>
+<!-- Menu Item -->
+<button class="flex items-center justify-between w-full py-4 px-2 hover:bg-surface-container-low rounded-xl transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined">star_rate</span>
+</div>
+<span class="text-body-lg font-body-lg font-semibold text-on-surface">Đánh giá của tôi</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+<div class="h-[1px] bg-surface-container mx-2"></div>
+<!-- Menu Item -->
+<button class="flex items-center justify-between w-full py-4 px-2 hover:bg-surface-container-low rounded-xl transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined">help</span>
+</div>
+<span class="text-body-lg font-body-lg font-semibold text-on-surface">Hỗ trợ</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+</div>
+<!-- Logout Button -->
+<div class="mt-8 pt-4">
+<button class="flex items-center justify-center w-full gap-2 py-4 text-error font-headline-md text-headline-md hover:bg-error-container/50 rounded-xl transition-colors">
+<span class="material-symbols-outlined">logout</span>
+                    Đăng xuất
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (From JSON) -->
+<nav class="fixed bottom-0 left-0 right-0 w-full flex justify-around items-center px-4 py-3 bg-surface-container-lowest dark:bg-surface-container-low max-w-max-width mx-auto z-50 rounded-t-3xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="text-label-caps font-label-caps uppercase">Home</span>
+</a>
+<!-- Orders -->
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined mb-1">receipt_long</span>
+<span class="text-label-caps font-label-caps uppercase">Orders</span>
+</a>
+<!-- Cart -->
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined mb-1">shopping_cart</span>
+<span class="text-label-caps font-label-caps uppercase">Cart</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#F97316] text-white rounded-xl px-4 py-1 scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-caps font-label-caps uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UniEats - Shop Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary": "#9d4300",
+                "on-secondary": "#ffffff",
+                "secondary-container": "#d8deff",
+                "on-surface-variant": "#584237",
+                "on-tertiary-fixed-variant": "#3a485c",
+                "on-secondary-fixed": "#131a33",
+                "on-primary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "tertiary": "#515f74",
+                "outline": "#8c7164",
+                "on-primary-fixed": "#341100",
+                "secondary-fixed": "#dbe1ff",
+                "error-container": "#ffdad6",
+                "surface-container-high": "#e7e8e9",
+                "primary-fixed-dim": "#ffb690",
+                "tertiary-container": "#8d9bb2",
+                "on-tertiary-fixed": "#0d1c2f",
+                "surface-container-low": "#f3f4f5",
+                "secondary": "#565d79",
+                "on-secondary-fixed-variant": "#3e4660",
+                "inverse-surface": "#2e3132",
+                "surface-variant": "#e1e3e4",
+                "outline-variant": "#e0c0b1",
+                "inverse-on-surface": "#f0f1f2",
+                "surface-container": "#edeeef",
+                "on-surface": "#191c1d",
+                "on-primary-fixed-variant": "#783200",
+                "surface": "#f8f9fa",
+                "on-tertiary-container": "#253346",
+                "secondary-fixed-dim": "#bec5e5",
+                "surface-dim": "#d9dadb",
+                "tertiary-fixed-dim": "#b9c7e0",
+                "primary-fixed": "#ffdbca",
+                "inverse-primary": "#ffb690",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-highest": "#e1e3e4",
+                "primary-container": "#f97316",
+                "on-error-container": "#93000a",
+                "tertiary-fixed": "#d5e3fd",
+                "on-background": "#191c1d",
+                "on-secondary-container": "#5a627e",
+                "on-primary-container": "#582200",
+                "error": "#ba1a1a",
+                "background": "#f8f9fa",
+                "on-error": "#ffffff",
+                "surface-tint": "#9d4300",
+                "surface-bright": "#f8f9fa"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-padding": "24px",
+                "stack-gap": "16px",
+                "section-margin": "32px",
+                "max-width": "480px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "Inter"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Inter"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "30px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex justify-center">
+<div class="w-full max-w-max-width bg-surface relative min-h-screen shadow-2xl flex flex-col">
+<!-- Top App Bar -->
+<header class="bg-[#0B132B] text-on-primary sticky top-0 z-50 flex justify-between items-center px-4 h-16 shadow-sm">
+<button class="p-2 hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-primary truncate mx-4">Menu - Cơm Tấm Sài Gòn</h1>
+<button class="p-2 hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+</header>
+<!-- Category Filter (Sticky) -->
+<div class="sticky top-16 z-40 bg-surface border-b border-surface-variant overflow-x-auto py-3 px-4 hide-scrollbar">
+<div class="flex gap-3">
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary-container text-on-primary font-body-sm text-body-sm shadow-sm transition-transform active:scale-95">Bán chạy</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-body-sm text-body-sm hover:bg-surface-variant transition-colors">Món chính</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-body-sm text-body-sm hover:bg-surface-variant transition-colors">Đồ uống</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-body-sm text-body-sm hover:bg-surface-variant transition-colors">Topping</button>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-24 px-4 pt-4 space-y-4">
+<!-- Food Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img alt="Food" class="w-full h-full object-cover" data-alt="A close-up shot of a steaming plate of authentic Vietnamese Cơm Tấm (broken rice). The dish features perfectly grilled, caramelized pork chops with a slight char, accompanied by a side of shredded pork skin, pickled carrots and daikon, and a small bowl of savory fish sauce. The scene is brightly lit with warm, appetizing colors against a clean, modern white background, capturing a mouth-watering culinary moment." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-1 leading-tight">Cơm Tấm Sườn Nướng</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Cơm tấm dẻo, sườn nướng mỡ hành đậm vị, kèm dưa chua.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">35.000đ</span>
+<button class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Food Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img alt="Food" class="w-full h-full object-cover" data-alt="A vibrant top-down view of Vietnamese broken rice (Com Tam) served on a rustic plate. The composition includes a prominent, glistening grilled pork chop, a slice of steamed egg meatloaf, and fresh cucumber slices. A small dish of amber-colored fish sauce sits nearby. The lighting is bright and natural, highlighting the textures of the food and the warm, earthy tones of the setting." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-1 leading-tight">Cơm Tấm Sườn Bì Chả</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Đầy đủ sườn nướng, bì heo, chả trứng hấp dẫn.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">45.000đ</span>
+<button class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Food Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img alt="Food" class="w-full h-full object-cover" data-alt="A refreshing glass of traditional Vietnamese iced coffee with condensed milk (Ca phe sua da). The tall glass shows rich, dark coffee layered over thick, sweet milk, filled with ice cubes. Condensation drips down the glass. The background is a soft, blurred café setting with bright daylight, emphasizing the cool, energizing appeal of the beverage." src="https://lh3.googleusercontent.com/aida/ADBb0ugmsX4D8RcMWo_XOMpeD_SW6wbDtuhBJOkhBp48r6bc9ZY6TS_XDMc8cbiGTJ_Pwc6VSchZJ0qiiORT7jBWiwxAH36seAebxFLGgzcClC5AQqvpE1ZHqfaEsCWGHC7OGu3KsalBKsWiOpGYQELsO1wae0LyvcpIksExnEs6FFzDruTPaufa_p1RLh3AdPvY84Jitsc9YAj_4ENSVytmb1HBrby7qQr4yUGK5nsXNqHY_J7I1bxbXIsAj1cJtwfEpWOevMqCaaCVew"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-1 leading-tight">Cà Phê Sữa Đá</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Cà phê pha phin truyền thống thơm lừng, đậm đà.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">20.000đ</span>
+<button class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Food Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img alt="Food" class="w-full h-full object-cover" data-alt="A close-up of extra toppings for a Vietnamese meal. A small white bowl filled with shiny, golden-brown fried shallots and a side of fresh, green scallion oil (mo hanh). The lighting is crisp and clear, focusing on the glossy texture of the oil and the crispiness of the shallots, set against a simple, light-colored table surface." src="https://lh3.googleusercontent.com/aida/ADBb0uhreCsWB55Tm_NkxFRXgnGZdaeFDLZ6xkdxgHVkm7hfrpbaf9RcurKEXJPPLXm4ZJABOTF00Ry1m-HcatxDD7p5NuAoh94jUyFspB37OXXNi9yrwPDM-5xj24TO9pBe4_rGxiP5OVKVwjfriyuRgZ_HT5cJ93CXFgiLn_L647Y7sZJUi2b2bGKhzVV7iA8apXelsH7q2MSN1LU-e0Xr_aXkfXyzu80emz5wJJtdiQA6cZiqXtV3glKHmXwjtdFriwWhMo5m-90CxJo"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-1 leading-tight">Thêm Mỡ Hành &amp; Tóp Mỡ</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Topping giòn rụm, béo ngậy cho bữa ăn thêm trọn vẹn.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">5.000đ</span>
+<button class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Floating Banner -->
+<div class="fixed bottom-4 left-0 right-0 px-4 max-w-max-width mx-auto w-full z-50">
+<button class="w-full bg-primary-container text-on-primary rounded-xl p-4 flex justify-between items-center shadow-lg hover:bg-opacity-95 active:scale-95 transition-all">
+<div class="flex flex-col text-left">
+<span class="font-body-sm text-body-sm opacity-90">2 món</span>
+<span class="font-body-lg text-body-lg font-bold">55.000đ</span>
+</div>
+<div class="flex items-center gap-2 font-body-lg text-body-lg font-bold">
+                Xem Giỏ Hàng
+                <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>UniEats - Mobile Student Homepage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#3e4660",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface": "#f8f9fa",
+                    "on-surface-variant": "#584237",
+                    "background": "#f8f9fa",
+                    "on-secondary-fixed": "#131a33",
+                    "secondary-container": "#d8deff",
+                    "primary-container": "#f97316",
+                    "tertiary-fixed-dim": "#b9c7e0",
+                    "primary-fixed-dim": "#ffb690",
+                    "on-background": "#191c1d",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary-fixed-dim": "#bec5e5",
+                    "surface-bright": "#f8f9fa",
+                    "on-tertiary-fixed-variant": "#3a485c",
+                    "tertiary": "#515f74",
+                    "secondary-fixed": "#dbe1ff",
+                    "on-surface": "#191c1d",
+                    "primary-fixed": "#ffdbca",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#783200",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#0d1c2f",
+                    "on-primary-fixed": "#341100",
+                    "surface-tint": "#9d4300",
+                    "on-tertiary-container": "#253346",
+                    "outline-variant": "#e0c0b1",
+                    "inverse-primary": "#ffb690",
+                    "surface-dim": "#d9dadb",
+                    "primary": "#9d4300",
+                    "inverse-surface": "#2e3132",
+                    "outline": "#8c7164",
+                    "tertiary-fixed": "#d5e3fd",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f3f4f5",
+                    "secondary": "#565d79",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#8d9bb2",
+                    "on-primary-container": "#582200",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-container": "#edeeef",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#5a627e",
+                    "surface-variant": "#e1e3e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "3xl": "1.5rem"
+            },
+            "spacing": {
+                    "container-padding": "24px",
+                    "stack-gap": "16px",
+                    "section-margin": "32px",
+                    "max-width": "480px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "30px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa; /* using raw hex for root background as fallback, though classes will cover it */
+        }
+        .app-container {
+            max-width: 480px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            position: relative;
+            overflow-x: hidden;
+            padding-bottom: 80px; /* space for bottom nav */
+        }
+        
+        /* Custom Header Background Color */
+        .bg-navy-header {
+            background-color: #0B132B;
+        }
+        
+        /* Soft ambient shadow for main card */
+        .shadow-ambient {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-lg text-body-lg text-on-surface">
+<div class="app-container shadow-2xl relative">
+<!-- Header Section (Dark Navy) -->
+<div class="bg-navy-header rounded-b-[40px] pt-12 pb-24 px-container-padding relative z-0">
+<div class="flex justify-between items-center mb-stack-gap">
+<h1 class="font-display-lg text-display-lg text-on-primary">Xin chào, Alex!</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border-2 border-on-primary">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of an energetic university student smiling warmly. The lighting is bright and cheerful, reflecting a modern, optimistic light-mode aesthetic. The background is slightly blurred but suggests a bustling campus environment. The overall mood is approachable and vibrant." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant z-10">search</span>
+<input class="w-full bg-surface-container-low h-12 rounded-xl pl-12 pr-4 border-none focus:ring-2 focus:ring-primary-container font-body-lg text-body-lg text-on-surface placeholder-on-surface-variant shadow-sm outline-none" placeholder="Tìm kiếm món ăn, quán ăn..." type="text"/>
+</div>
+</div>
+<!-- Main Content Container (Overlapping Header) -->
+<div class="bg-surface-container-lowest rounded-3xl mx-4 -mt-16 relative z-10 shadow-ambient overflow-hidden min-h-[500px]">
+<!-- Sticky Tabs -->
+<div class="sticky top-0 bg-surface-container-lowest/90 backdrop-blur-md border-b border-surface-variant z-20 px-container-padding pt-4">
+<div class="flex gap-8">
+<button class="relative pb-4 font-headline-md text-headline-md text-primary-container">
+                    Quán Ăn
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container rounded-t-full"></div>
+</button>
+<button class="relative pb-4 font-headline-md text-headline-md text-on-surface-variant hover:text-on-surface transition-colors">
+                    Món Ngon
+                </button>
+</div>
+</div>
+<!-- Shop List Content -->
+<div class="p-container-padding flex flex-col gap-section-margin">
+<!-- Shop Card 1 -->
+<div class="flex flex-col gap-stack-gap">
+<div class="w-full h-48 rounded-xl overflow-hidden relative shadow-sm">
+<img alt="Cơm Tấm Sài Gòn" class="w-full h-full object-cover" data-alt="A vivid photograph of a bustling, modern Vietnamese street food stall interior, specifically serving Cơm Tấm. The lighting is warm and inviting, highlighting steaming plates of rice and grilled meats. The setting reflects a clean, high-contrast modern aesthetic with vibrant orange accents contrasting against deep slate elements. The mood is appetizing and energetic." src="https://lh3.googleusercontent.com/aida/ADBb0ugmsX4D8RcMWo_XOMpeD_SW6wbDtuhBJOkhBp48r6bc9ZY6TS_XDMc8cbiGTJ_Pwc6VSchZJ0qiiORT7jBWiwxAH36seAebxFLGgzcClC5AQqvpE1ZHqfaEsCWGHC7OGu3KsalBKsWiOpGYQELsO1wae0LyvcpIksExnEs6FFzDruTPaufa_p1RLh3AdPvY84Jitsc9YAj_4ENSVytmb1HBrby7qQr4yUGK5nsXNqHY_J7I1bxbXIsAj1cJtwfEpWOevMqCaaCVew"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-label-caps text-on-surface">4.8</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Cơm Tấm Sài Gòn</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cơm/Rice • Đang mở</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">15 min</span>
+</div>
+</div>
+</div>
+<!-- Shop Card 2 -->
+<div class="flex flex-col gap-stack-gap">
+<div class="w-full h-48 rounded-xl overflow-hidden relative shadow-sm">
+<img alt="Phở Bát Đàn" class="w-full h-full object-cover" data-alt="A beautifully lit, high-quality photograph of a contemporary noodle soup shop interior. The scene features clean wooden tables and modern minimalist seating under bright, natural daylight. The visual style is crisp and clean, utilizing a palette of soft whites and natural wood tones, consistent with a modern light-mode design system. The mood is fresh and inviting." src="https://lh3.googleusercontent.com/aida/ADBb0uhreCsWB55Tm_NkxFRXgnGZdaeFDLZ6xkdxgHVkm7hfrpbaf9RcurKEXJPPLXm4ZJABOTF00Ry1m-HcatxDD7p5NuAoh94jUyFspB37OXXNi9yrwPDM-5xj24TO9pBe4_rGxiP5OVKVwjfriyuRgZ_HT5cJ93CXFgiLn_L647Y7sZJUi2b2bGKhzVV7iA8apXelsH7q2MSN1LU-e0Xr_aXkfXyzu80emz5wJJtdiQA6cZiqXtV3glKHmXwjtdFriwWhMo5m-90CxJo"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-label-caps text-on-surface">4.5</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Phở Bát Đàn</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Món Nước/Noodles • Đang mở</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">20 min</span>
+</div>
+</div>
+</div>
+<!-- Shop Card 3 -->
+<div class="flex flex-col gap-stack-gap">
+<div class="w-full h-48 rounded-xl overflow-hidden relative shadow-sm">
+<img alt="Bánh Mì Huynh Hoa" class="w-full h-full object-cover" data-alt="A highly detailed close-up shot of a modern, sleek sandwich counter display in a brightly lit bakery. The counter is pristine white, showcasing colorful, fresh ingredients under crisp overhead lighting. The aesthetic is clean, fast-paced, and high-contrast, perfectly aligning with a youthful, energetic brand identity. The mood is efficient and appetizing." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-label-caps text-on-surface">4.9</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Bánh Mì Chảo Cô Quyên</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bánh Mì/Bread • Sắp đóng cửa</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">10 min</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BottomNavBar Component -->
+<nav class="fixed bottom-0 w-full max-w-[480px] z-50 flex justify-around items-center px-4 py-2 bg-surface dark:bg-surface-dim shadow-lg rounded-t-xl" style="box-shadow: 0 -4px 20px rgba(0,0,0,0.05);">
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-xl p-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md mt-1 text-[10px] font-semibold">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container dark:hover:bg-surface-container-high active:scale-90 transition-transform rounded-xl">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md mt-1 text-[10px] font-semibold">Orders</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container dark:hover:bg-surface-container-high active:scale-90 transition-transform rounded-xl">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-md text-label-md mt-1 text-[10px] font-semibold">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container dark:hover:bg-surface-container-high active:scale-90 transition-transform rounded-xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md mt-1 text-[10px] font-semibold">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>
