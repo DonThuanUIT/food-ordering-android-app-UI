@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quản Lý Người Dùng</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#b9c7e0",
+                      "on-surface-variant": "#584237",
+                      "primary-fixed": "#ffdbca",
+                      "tertiary-container": "#8d9bb2",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-primary-fixed": "#341100",
+                      "secondary-fixed-dim": "#bec5e5",
+                      "surface-bright": "#f8f9fa",
+                      "on-tertiary-fixed-variant": "#3a485c",
+                      "surface-variant": "#e1e3e4",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e1e3e4",
+                      "on-tertiary-container": "#253346",
+                      "outline": "#8c7164",
+                      "surface-container": "#edeeef",
+                      "tertiary": "#515f74",
+                      "outline-variant": "#e0c0b1",
+                      "on-secondary-container": "#5a627e",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#dbe1ff",
+                      "on-primary-fixed-variant": "#783200",
+                      "on-secondary-fixed": "#131a33",
+                      "inverse-primary": "#ffb690",
+                      "on-background": "#191c1d",
+                      "background": "#f8f9fa",
+                      "primary": "#9d4300",
+                      "surface-container-low": "#f3f4f5",
+                      "on-primary-container": "#582200",
+                      "primary-fixed-dim": "#ffb690",
+                      "on-surface": "#191c1d",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#d9dadb",
+                      "surface-container-high": "#e7e8e9",
+                      "secondary": "#565d79",
+                      "inverse-surface": "#2e3132",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#3e4660",
+                      "surface": "#f8f9fa",
+                      "tertiary-fixed": "#d5e3fd",
+                      "secondary-container": "#d8deff",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#9d4300",
+                      "on-tertiary-fixed": "#0d1c2f",
+                      "primary-container": "#f97316",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-margin": "32px",
+                      "container-padding": "24px",
+                      "stack-gap": "16px",
+                      "max-width": "480px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "30px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Mobile-First Fixed Grid Constraints */
+        body {
+            background-color: #f8f9fa; /* background */
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        #app-container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #f8f9fa;
+            position: relative;
+            overflow-x: hidden;
+            box-shadow: 0 0 40px rgba(0,0,0,0.05);
+            min-height: 100vh;
+            padding-bottom: 80px; /* Space for BottomNav */
+        }
+        
+        /* Ambient Shadows */
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body-lg">
+<div id="app-container">
+<!-- TopAppBar (from JSON) -->
+<header class="bg-on-secondary-fixed dark:bg-on-secondary-fixed text-on-primary dark:text-primary-fixed-dim docked full-width top-0 rounded-b-[32px] h-48 bg-on-secondary-fixed dark:bg-on-secondary-fixed relative z-0">
+<div class="flex justify-between items-center px-container-padding pt-8 w-full max-w-max-width mx-auto">
+<button class="hover:opacity-80 transition-opacity Active: scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed-dim">UniEats Admin</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-container">
+<!-- Assuming Admin Profile avatar, using a placeholder image -->
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="A professional headshot avatar of a university administrator. The image is bright and clear, reflecting a modern, high-contrast light mode UI aesthetic with deep navy and vibrant orange subtle brand colors in the background. The lighting is soft and flattering, suitable for a professional profile picture within a campus application." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+</div>
+</div>
+<!-- Additional specific text for this page based on prompt -->
+<div class="px-container-padding mt-6 text-center">
+<h2 class="font-headline-md text-headline-md text-on-primary">Quản Lý User</h2>
+</div>
+</header>
+<!-- Main Content -->
+<main class="px-container-padding -mt-16 relative z-10 pb-section-margin">
+<!-- Main Card -->
+<div class="bg-surface-container-lowest rounded-[32px] p-container-padding card-shadow">
+<!-- Search Input -->
+<div class="mb-stack-gap relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary" data-icon="search">search</span>
+<input class="w-full bg-[#F3F4F6] rounded-xl py-3 pl-12 pr-4 text-on-surface font-body-sm placeholder:text-tertiary focus:outline-none focus:ring-2 focus:ring-primary-container border-none" placeholder="Tìm kiếm người dùng..." type="text"/>
+</div>
+<!-- User List -->
+<div class="flex flex-col gap-4">
+<!-- User Row 1 -->
+<div class="flex items-center justify-between py-2 border-b border-surface-variant last:border-0">
+<div class="flex items-center gap-3">
+<img alt="Alex Nguyen" class="w-12 h-12 rounded-full object-cover" data-alt="A bright, modern headshot of a university student named Alex. The portrait is set against a clean, light background to match a high-contrast light mode UI. The lighting is natural and vibrant, conveying energy and approachability suitable for a student profile in a food delivery app." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+<div>
+<h3 class="font-headline-md text-[16px] leading-[24px] font-semibold text-on-surface">Alex Nguyen</h3>
+<p class="font-body-sm text-on-surface-variant text-[12px]">alex.n@university.edu</p>
+<span class="inline-block mt-1 px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full">Student</span>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- User Row 2 -->
+<div class="flex items-center justify-between py-2 border-b border-surface-variant last:border-0">
+<div class="flex items-center gap-3">
+<img alt="Maria Garcia" class="w-12 h-12 rounded-full object-cover" data-alt="A professional, well-lit portrait of a vendor named Maria. She looks friendly and reliable. The background is a crisp white, aligning with a clean, high-contrast light mode UI aesthetic. Subtle hints of deep navy and vibrant orange in her clothing tie into the brand colors." src="https://lh3.googleusercontent.com/aida/ADBb0ugmsX4D8RcMWo_XOMpeD_SW6wbDtuhBJOkhBp48r6bc9ZY6TS_XDMc8cbiGTJ_Pwc6VSchZJ0qiiORT7jBWiwxAH36seAebxFLGgzcClC5AQqvpE1ZHqfaEsCWGHC7OGu3KsalBKsWiOpGYQELsO1wae0LyvcpIksExnEs6FFzDruTPaufa_p1RLh3AdPvY84Jitsc9YAj_4ENSVytmb1HBrby7qQr4yUGK5nsXNqHY_J7I1bxbXIsAj1cJtwfEpWOevMqCaaCVew"/>
+<div>
+<h3 class="font-headline-md text-[16px] leading-[24px] font-semibold text-on-surface">Maria Garcia</h3>
+<p class="font-body-sm text-on-surface-variant text-[12px]">maria.g@vendor.com</p>
+<span class="inline-block mt-1 px-2 py-0.5 bg-tertiary-container text-on-tertiary-container font-label-caps text-[10px] rounded-full">Vendor</span>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- User Row 3 -->
+<div class="flex items-center justify-between py-2 border-b border-surface-variant last:border-0 opacity-60">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant font-headline-md">JD</div>
+<div>
+<h3 class="font-headline-md text-[16px] leading-[24px] font-semibold text-on-surface">John Doe</h3>
+<p class="font-body-sm text-on-surface-variant text-[12px]">john.d@university.edu</p>
+<span class="inline-block mt-1 px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full">Student</span>
+</div>
+</div>
+<!-- Toggle Switch (Locked) -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- User Row 4 -->
+<div class="flex items-center justify-between py-2 border-b border-surface-variant last:border-0">
+<div class="flex items-center gap-3">
+<img alt="Chen Wei" class="w-12 h-12 rounded-full object-cover" data-alt="A casual, energetic portrait of a student named Chen. The image has a bright, high-key lighting style typical of modern light-mode applications. The background is a soft, off-white, ensuring the subject stands out sharply against the clean UI elements." src="https://lh3.googleusercontent.com/aida/ADBb0uhreCsWB55Tm_NkxFRXgnGZdaeFDLZ6xkdxgHVkm7hfrpbaf9RcurKEXJPPLXm4ZJABOTF00Ry1m-HcatxDD7p5NuAoh94jUyFspB37OXXNi9yrwPDM-5xj24TO9pBe4_rGxiP5OVKVwjfriyuRgZ_HT5cJ93CXFgiLn_L647Y7sZJUi2b2bGKhzVV7iA8apXelsH7q2MSN1LU-e0Xr_aXkfXyzu80emz5wJJtdiQA6cZiqXtV3glKHmXwjtdFriwWhMo5m-90CxJo"/>
+<div>
+<h3 class="font-headline-md text-[16px] leading-[24px] font-semibold text-on-surface">Chen Wei</h3>
+<p class="font-body-sm text-on-surface-variant text-[12px]">chen.w@university.edu</p>
+<span class="inline-block mt-1 px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full">Student</span>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (from JSON) -->
+<nav class="bg-surface-container-lowest dark:bg-surface-dim text-primary dark:text-primary-fixed-dim font-label-caps text-label-caps fixed bottom-0 w-full z-50 rounded-t-xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] bg-surface-container-lowest dark:bg-surface-dim shadow-lg fixed bottom-0 left-0 right-0 w-full max-w-max-width mx-auto flex justify-around items-center py-3 px-4">
+<!-- Overview: Inactive -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant dark:hover:bg-on-surface-variant transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</button>
+<!-- Approvals: Inactive -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant dark:hover:bg-on-surface-variant transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1" data-icon="fact_check">fact_check</span>
+<span>Approvals</span>
+</button>
+<!-- Users: Active (Mapping to 'Người dùng' intent) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 Active: scale-90 duration-150">
+<span class="material-symbols-outlined mb-1" data-icon="group" data-weight="fill">group</span>
+<span>Users</span>
+</button>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ĐĂNG NHẬP - UniEats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "tertiary-fixed": "#d5e3fd",
+                            "on-error-container": "#93000a",
+                            "on-error": "#ffffff",
+                            "tertiary-fixed-dim": "#b9c7e0",
+                            "inverse-on-surface": "#f0f1f2",
+                            "background": "#f8f9fa",
+                            "on-primary-fixed-variant": "#783200",
+                            "on-tertiary-fixed-variant": "#3a485c",
+                            "on-secondary": "#ffffff",
+                            "surface-container-high": "#e7e8e9",
+                            "inverse-primary": "#ffb690",
+                            "on-secondary-fixed": "#131a33",
+                            "primary-fixed-dim": "#ffb690",
+                            "tertiary": "#515f74",
+                            "surface": "#f8f9fa",
+                            "surface-tint": "#9d4300",
+                            "on-primary-container": "#582200",
+                            "on-secondary-container": "#5a627e",
+                            "on-surface": "#191c1d",
+                            "on-primary": "#ffffff",
+                            "on-surface-variant": "#584237",
+                            "surface-container-highest": "#e1e3e4",
+                            "secondary": "#565d79",
+                            "on-secondary-fixed-variant": "#3e4660",
+                            "primary-container": "#f97316",
+                            "surface-variant": "#e1e3e4",
+                            "surface-dim": "#d9dadb",
+                            "surface-container": "#edeeef",
+                            "error-container": "#ffdad6",
+                            "surface-bright": "#f8f9fa",
+                            "secondary-fixed-dim": "#bec5e5",
+                            "secondary-fixed": "#dbe1ff",
+                            "on-tertiary-fixed": "#0d1c2f",
+                            "outline": "#8c7164",
+                            "surface-container-low": "#f3f4f5",
+                            "primary-fixed": "#ffdbca",
+                            "tertiary-container": "#8d9bb2",
+                            "outline-variant": "#e0c0b1",
+                            "on-tertiary": "#ffffff",
+                            "on-primary-fixed": "#341100",
+                            "on-background": "#191c1d",
+                            "primary": "#9d4300",
+                            "on-tertiary-container": "#253346",
+                            "inverse-surface": "#2e3132",
+                            "surface-container-lowest": "#ffffff",
+                            "secondary-container": "#d8deff",
+                            "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px",
+                            "3xl": "32px"
+                    },
+                    "spacing": {
+                            "section-margin": "32px",
+                            "max-width": "480px",
+                            "container-padding": "24px",
+                            "stack-gap": "16px",
+                            "header-h": "25vh"
+                    },
+                    "fontFamily": {
+                            "body-lg": ["Inter"],
+                            "headline-md": ["Inter"],
+                            "body-sm": ["Inter"],
+                            "display-lg": ["Inter"],
+                            "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                            "display-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa; /* surface color */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface min-h-screen flex justify-center w-full">
+<div class="relative w-full max-w-[480px] bg-surface min-h-screen shadow-2xl overflow-hidden flex flex-col">
+<!-- Header Section -->
+<div class="absolute top-0 left-0 w-full h-[265px] bg-on-secondary-fixed rounded-b-[40px] z-0 flex flex-col items-center pt-16">
+<h1 class="font-display-lg text-display-lg text-on-primary">ĐĂNG NHẬP</h1>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 flex-1 flex flex-col pt-[176px] px-container-padding pb-container-padding">
+<!-- Login Card -->
+<div class="bg-surface-container-lowest rounded-3xl p-container-padding shadow-[0_8px_30px_rgb(0,0,0,0.08)] mb-stack-gap">
+<form class="flex flex-col gap-stack-gap">
+<!-- Phone Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Số Điện Thoại</label>
+<input class="bg-surface-container-low border-none rounded-xl h-12 px-4 font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant focus:ring-2 focus:ring-primary-container outline-none" placeholder="0123456789" type="tel"/>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Mật Khẩu</label>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-low border-none rounded-xl h-12 pl-4 pr-12 font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant focus:ring-2 focus:ring-primary-container outline-none" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center h-full" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">visibility</span>
+</button>
+</div>
+</div>
+<!-- Options Row -->
+<div class="flex justify-between items-center mt-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-5 h-5 rounded-[4px] border-none bg-surface-container-low text-primary-container focus:ring-primary-container" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Lưu phiên đăng nhập</span>
+</label>
+<a class="font-body-sm text-body-sm text-primary-container font-semibold hover:underline" href="#">Quên Mật Khẩu</a>
+</div>
+<!-- Submit Button -->
+<button class="mt-4 w-full h-14 bg-primary-container text-on-primary font-headline-md text-headline-md rounded-xl hover:opacity-90 active:scale-95 transition-all" type="button">
+                        ĐĂNG NHẬP
+                    </button>
+</form>
+</div>
+<!-- Footer & Social Login -->
+<div class="mt-auto flex flex-col gap-stack-gap">
+<div class="text-center font-body-sm text-body-sm text-on-surface">
+                    Không có tài khoản? <a class="text-primary-container font-semibold hover:underline" href="#">ĐĂNG KÝ</a>
+</div>
+<div class="flex items-center gap-4 py-2">
+<div class="flex-1 h-px bg-surface-variant"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Hoặc đăng nhập bằng</span>
+<div class="flex-1 h-px bg-surface-variant"></div>
+</div>
+<div class="flex justify-center gap-4">
+<button class="w-14 h-14 bg-surface-container-lowest border border-surface-variant rounded-xl flex items-center justify-center hover:bg-surface-container-low transition-colors shadow-sm">
+<!-- Facebook Icon Placeholder using text for simplicity in this pure HTML setup -->
+<span class="font-headline-md text-on-surface" style="color: #1877F2; font-weight: bold;">f</span>
+</button>
+<button class="w-14 h-14 bg-surface-container-lowest border border-surface-variant rounded-xl flex items-center justify-center hover:bg-surface-container-low transition-colors shadow-sm">
+<!-- Google Icon Placeholder -->
+<span class="font-headline-md text-on-surface" style="color: #DB4437; font-weight: bold;">G</span>
+</button>
+<button class="w-14 h-14 bg-surface-container-lowest border border-surface-variant rounded-xl flex items-center justify-center hover:bg-surface-container-low transition-colors shadow-sm">
+<!-- Apple Icon Placeholder -->
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 1;">File</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Đăng Ký Tài Khoản - UniEats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed": "#341100",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2e3132",
+                        "surface-variant": "#e1e3e4",
+                        "surface-tint": "#9d4300",
+                        "surface-bright": "#f8f9fa",
+                        "surface": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "secondary": "#565d79",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed-dim": "#ffb690",
+                        "tertiary-fixed": "#d5e3fd",
+                        "outline-variant": "#e0c0b1",
+                        "surface-container-high": "#e7e8e9",
+                        "on-surface-variant": "#584237",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#8d9bb2",
+                        "surface-container": "#edeeef",
+                        "secondary-fixed": "#dbe1ff",
+                        "tertiary-fixed-dim": "#b9c7e0",
+                        "on-tertiary-fixed": "#0d1c2f",
+                        "on-secondary-fixed": "#131a33",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed-variant": "#3e4660",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#ffb690",
+                        "secondary-fixed-dim": "#bec5e5",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#9d4300",
+                        "on-primary-container": "#582200",
+                        "background": "#f8f9fa",
+                        "outline": "#8c7164",
+                        "on-tertiary-fixed-variant": "#3a485c",
+                        "on-tertiary-container": "#253346",
+                        "primary-container": "#f97316",
+                        "on-secondary-container": "#5a627e",
+                        "primary-fixed": "#ffdbca",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-container": "#d8deff",
+                        "tertiary": "#515f74",
+                        "on-primary-fixed-variant": "#783200"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "3xl": "1.5rem"
+                    },
+                    "spacing": {
+                        "stack-gap": "16px",
+                        "max-width": "480px",
+                        "section-margin": "32px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-lg": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .curved-header {
+            background-color: #0B132B;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+        }
+        .soft-deep-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex justify-center font-body-lg text-on-background">
+<div class="w-full max-w-[max-width] bg-background relative overflow-hidden flex flex-col">
+<!-- Header Section -->
+<div class="curved-header w-full h-[221px] absolute top-0 left-0 z-0 flex flex-col items-center pt-12">
+<h1 class="font-display-lg text-display-lg text-on-primary">Đăng Ký Tài Khoản</h1>
+<p class="font-body-sm text-body-sm text-on-primary opacity-80 mt-2">Tham gia cộng đồng UniEats ngay!</p>
+</div>
+<!-- Main Content -->
+<main class="relative z-10 flex-1 px-container-padding pt-[159px] pb-8 flex flex-col">
+<!-- Card Container -->
+<div class="bg-surface-container-lowest rounded-3xl p-container-padding soft-deep-shadow flex flex-col gap-section-margin">
+<!-- Segmented Toggle -->
+<div class="bg-surface-container-low rounded-full p-1 flex">
+<button class="flex-1 py-2 rounded-full bg-surface-container-lowest shadow-sm font-label-caps text-label-caps text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">school</span>
+                        Sinh viên
+                    </button>
+<button class="flex-1 py-2 rounded-full font-label-caps text-label-caps text-on-surface-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+                        Chủ quán
+                    </button>
+</div>
+<!-- Registration Form -->
+<form class="flex flex-col gap-stack-gap">
+<!-- Full Name -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Họ và tên</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">person</span>
+<input class="w-full bg-surface-container-low rounded-lg py-3 pl-10 pr-4 text-on-surface font-body-lg text-body-lg border-none focus:ring-2 focus:ring-primary-container outline-none placeholder:text-on-surface-variant/50" placeholder="Nhập họ và tên" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Email</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">mail</span>
+<input class="w-full bg-surface-container-low rounded-lg py-3 pl-10 pr-4 text-on-surface font-body-lg text-body-lg border-none focus:ring-2 focus:ring-primary-container outline-none placeholder:text-on-surface-variant/50" placeholder="student@university.edu.vn" type="email"/>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Số điện thoại</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">phone</span>
+<input class="w-full bg-surface-container-low rounded-lg py-3 pl-10 pr-4 text-on-surface font-body-lg text-body-lg border-none focus:ring-2 focus:ring-primary-container outline-none placeholder:text-on-surface-variant/50" placeholder="Nhập số điện thoại" type="tel"/>
+</div>
+</div>
+<!-- Building ID -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Mã Tòa Nhà - KTX</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">domain</span>
+<input class="w-full bg-surface-container-low rounded-lg py-3 pl-10 pr-4 text-on-surface font-body-lg text-body-lg border-none focus:ring-2 focus:ring-primary-container outline-none placeholder:text-on-surface-variant/50" placeholder="Ví dụ: Tòa A1, Phòng 204" type="text"/>
+</div>
+</div>
+<!-- Password -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Mật khẩu</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">lock</span>
+<input class="w-full bg-surface-container-low rounded-lg py-3 pl-10 pr-10 text-on-surface font-body-lg text-body-lg border-none focus:ring-2 focus:ring-primary-container outline-none placeholder:text-on-surface-variant/50" placeholder="Nhập mật khẩu" type="password"/>
+<button class="absolute right-3 text-on-surface-variant flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Confirm Password -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Xác nhận mật khẩu</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">lock</span>
+<input class="w-full bg-surface-container-low rounded-lg py-3 pl-10 pr-10 text-on-surface font-body-lg text-body-lg border-none focus:ring-2 focus:ring-primary-container outline-none placeholder:text-on-surface-variant/50" placeholder="Nhập lại mật khẩu" type="password"/>
+<button class="absolute right-3 text-on-surface-variant flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="mt-4 w-full bg-[#F97316] text-on-primary font-headline-md text-headline-md py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-surface-tint transition-colors" type="button">
+                        ĐĂNG KÝ
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Link -->
+<div class="text-center mt-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Đã có tài khoản? 
+                        <a class="text-primary-container font-headline-md text-body-sm ml-1 hover:underline" href="#">Đăng nhập</a>
+</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

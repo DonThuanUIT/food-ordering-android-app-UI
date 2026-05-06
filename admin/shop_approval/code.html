@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UniEats Admin - Duyệt Cửa Hàng</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#b9c7e0",
+                      "on-surface-variant": "#584237",
+                      "primary-fixed": "#ffdbca",
+                      "tertiary-container": "#8d9bb2",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-primary-fixed": "#341100",
+                      "secondary-fixed-dim": "#bec5e5",
+                      "surface-bright": "#f8f9fa",
+                      "on-tertiary-fixed-variant": "#3a485c",
+                      "surface-variant": "#e1e3e4",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e1e3e4",
+                      "on-tertiary-container": "#253346",
+                      "outline": "#8c7164",
+                      "surface-container": "#edeeef",
+                      "tertiary": "#515f74",
+                      "outline-variant": "#e0c0b1",
+                      "on-secondary-container": "#5a627e",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#dbe1ff",
+                      "on-primary-fixed-variant": "#783200",
+                      "on-secondary-fixed": "#131a33",
+                      "inverse-primary": "#ffb690",
+                      "on-background": "#191c1d",
+                      "background": "#f8f9fa",
+                      "primary": "#9d4300",
+                      "surface-container-low": "#f3f4f5",
+                      "on-primary-container": "#582200",
+                      "primary-fixed-dim": "#ffb690",
+                      "on-surface": "#191c1d",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#d9dadb",
+                      "surface-container-high": "#e7e8e9",
+                      "secondary": "#565d79",
+                      "inverse-surface": "#2e3132",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#3e4660",
+                      "surface": "#f8f9fa",
+                      "tertiary-fixed": "#d5e3fd",
+                      "secondary-container": "#d8deff",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#9d4300",
+                      "on-tertiary-fixed": "#0d1c2f",
+                      "primary-container": "#f97316",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-margin": "32px",
+                      "container-padding": "24px",
+                      "stack-gap": "16px",
+                      "max-width": "480px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "30px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #f8f9fa; /* fallback */
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background flex justify-center min-h-screen">
+<div class="w-full max-w-max-width bg-surface-container-low relative pb-24 overflow-hidden shadow-2xl">
+<!-- TopAppBar -->
+<header class="bg-on-secondary-fixed dark:bg-on-secondary-fixed text-on-primary dark:text-primary-fixed-dim font-headline-md text-headline-md docked full-width top-0 rounded-b-[32px] h-48 bg-on-secondary-fixed dark:bg-on-secondary-fixed flat no shadows flex justify-between items-center px-container-padding pt-8 w-full max-w-max-width mx-auto absolute z-0">
+<button class="hover:opacity-80 transition-opacity flex items-center justify-center p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed-dim">UniEats Admin</h1>
+<div class="hover:opacity-80 transition-opacity w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="A close up, professional headshot portrait of an administrator. The lighting is studio quality, high-key, with a clean solid background to fit the modern UniEats UI style. Soft shadows define the face features, giving a sense of authority and approachability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4CeV6OAfy6kvk5FNChdk5WIGBlslNDoKRgYFs1hZfjJbztNOh93t3IuCKWnhg4OwxYaOzh3oFuKP_Qqk75xLbhHx7QBTYvOHUDjw32oS6260l-WK6bsATj83wTjnaODnkwZqJYQ-sIgqz1pLzSpGAhWQHBqlqGbdoH3nFa6sZ-sLWFSPXTJijJmYb318twUKwDHGdtOVgJVEmT8wQKvmQvuZPElVFqnNb_C_Y9khX83lmVsS8cGqIlI-LWpp6qWHV5vSES1KRZvSu"/>
+</div>
+</header>
+<!-- Main Content Area with Header Offset -->
+<main class="relative z-10 pt-32 px-container-padding">
+<!-- White Card Overlapping Header -->
+<div class="bg-surface-container-lowest rounded-[32px] p-container-padding shadow-[0_8px_30px_rgb(0,0,0,0.08)] min-h-[600px]">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-gap">Duyệt Cửa Hàng</h2>
+<!-- Pending Applications List -->
+<div class="flex flex-col gap-stack-gap">
+<!-- Application Item 1 -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl hover:bg-surface-variant transition-colors border border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-variant shadow-sm shrink-0">
+<img alt="Shop Avatar" class="w-full h-full object-cover" data-alt="A close up shot of a steaming bowl of traditional Vietnamese Pho. The broth is rich and clear, topped with fresh green onions, cilantro, and tender slices of beef. Shot from a slightly top-down angle, bright even lighting highlights the textures of the food. Clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+</div>
+<div>
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface">Phở Hùng</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Trần Nam</p>
+</div>
+</div>
+<button class="font-label-caps text-label-caps text-primary hover:text-primary-container transition-colors">
+                            XEM CHI TIẾT
+                        </button>
+</div>
+<!-- Application Item 2 -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl hover:bg-surface-variant transition-colors border border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-variant shadow-sm shrink-0">
+<img alt="Shop Avatar" class="w-full h-full object-cover" data-alt="An overhead shot of an iced Vietnamese coffee with milk (Ca phe sua da) in a tall glass, placed on a clean marble table. Condensation is visible on the glass. The background is slightly blurred showing a bright, modern cafe setting. Warm, inviting lighting." src="https://lh3.googleusercontent.com/aida/ADBb0ui2e3arKdhd0jPwtCT3TefSOqescGInJsH5B7Fvcy7IdQ2-CHh5QpEuGFL9HXyFCAfJFG-_66d7FDI3U0eRObT2hdhVCPr9vx8Vc252uWfxR3UFwa1xKpNvK9jRwwGAs2e9Tv-bOwC3cWYspOpK5cU4uPNkbrWwO5bF95fp0N9XLHmzpAzzwBQX_sQP_y-7JUGUf01GbQzPKxSQZlO2HprshpBjpfa8E7HU_4d9YvpW5iwdPuIwRQzUIXEVNWep0dKUROqhanxA20A"/>
+</div>
+<div>
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface">Cà Phê Sáng</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lê Thị Mai</p>
+</div>
+</div>
+<button class="font-label-caps text-label-caps text-primary hover:text-primary-container transition-colors">
+                            XEM CHI TIẾT
+                        </button>
+</div>
+<!-- Application Item 3 -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl hover:bg-surface-variant transition-colors border border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-variant shadow-sm shrink-0">
+<img alt="Shop Avatar" class="w-full h-full object-cover" data-alt="A close-up shot of a crispy Vietnamese Banh Mi sandwich filled with grilled pork, pickled carrots, cucumber, and cilantro. Placed on a simple wooden board against a white background. Bright, high-contrast lighting emphasizing the fresh ingredients and textures." src="https://lh3.googleusercontent.com/aida/ADBb0ugmsX4D8RcMWo_XOMpeD_SW6wbDtuhBJOkhBp48r6bc9ZY6TS_XDMc8cbiGTJ_Pwc6VSchZJ0qiiORT7jBWiwxAH36seAebxFLGgzcClC5AQqvpE1ZHqfaEsCWGHC7OGu3KsalBKsWiOpGYQELsO1wae0LyvcpIksExnEs6FFzDruTPaufa_p1RLh3AdPvY84Jitsc9YAj_4ENSVytmb1HBrby7qQr4yUGK5nsXNqHY_J7I1bxbXIsAj1cJtwfEpWOevMqCaaCVew"/>
+</div>
+<div>
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface">Bánh Mì 365</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Nguyễn Văn An</p>
+</div>
+</div>
+<button class="font-label-caps text-label-caps text-primary hover:text-primary-container transition-colors">
+                            XEM CHI TIẾT
+                        </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Simulated Bottom Sheet for 'Phở Hùng' -->
+<!-- Note: Placing this inside the main container to simulate the slide-up over the content -->
+<div class="absolute bottom-0 left-0 right-0 z-40 bg-surface-container-lowest rounded-t-[32px] shadow-[0_-10px_40px_rgb(0,0,0,0.15)] flex flex-col max-h-[85vh] transform translate-y-0 transition-transform pb-20"> <!-- pb-20 to clear bottom nav -->
+<!-- Drag Handle -->
+<div class="w-full flex justify-center pt-4 pb-2">
+<div class="w-12 h-1.5 bg-surface-variant rounded-full"></div>
+</div>
+<!-- Sheet Content -->
+<div class="px-container-padding overflow-y-auto pb-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Chi tiết cửa hàng</h3>
+<button class="text-on-surface-variant p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-variant shadow-md">
+<img alt="Shop Avatar" class="w-full h-full object-cover" data-alt="A close up shot of a steaming bowl of traditional Vietnamese Pho. The broth is rich and clear, topped with fresh green onions, cilantro, and tender slices of beef. Shot from a slightly top-down angle, bright even lighting highlights the textures of the food. Clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+</div>
+<div>
+<h4 class="font-display-lg text-display-lg font-bold text-on-surface text-[24px] leading-8">Phở Hùng</h4>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Chủ sở hữu: Trần Nam</p>
+</div>
+</div>
+<!-- Documents Section -->
+<div class="space-y-4 mb-8">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">GIẤY PHÉP KINH DOANH</p>
+<div class="w-full h-32 bg-surface rounded-xl border border-outline-variant/50 overflow-hidden relative group">
+<img alt="Business License Placeholder" class="w-full h-full object-cover opacity-80" data-alt="A top-down view of an official-looking document, resembling a business license or certificate, placed on a clean white desk. The document has formal seals, stamps, and signatures. Soft, even, bright studio lighting. High contrast modern aesthetic to fit the UniEats admin panel style." src="https://lh3.googleusercontent.com/aida/ADBb0uhreCsWB55Tm_NkxFRXgnGZdaeFDLZ6xkdxgHVkm7hfrpbaf9RcurKEXJPPLXm4ZJABOTF00Ry1m-HcatxDD7p5NuAoh94jUyFspB37OXXNi9yrwPDM-5xj24TO9pBe4_rGxiP5OVKVwjfriyuRgZ_HT5cJ93CXFgiLn_L647Y7sZJUi2b2bGKhzVV7iA8apXelsH7q2MSN1LU-e0Xr_aXkfXyzu80emz5wJJtdiQA6cZiqXtV3glKHmXwjtdFriwWhMo5m-90CxJo"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+</div>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">CĂN CƯỚC CÔNG DÂN</p>
+<div class="w-full h-32 bg-surface rounded-xl border border-outline-variant/50 overflow-hidden relative group">
+<img alt="ID Card Placeholder" class="w-full h-full object-cover opacity-80" data-alt="A top-down view of a generic national ID card lying flat on a pristine white surface. The card features a portrait placeholder and formal text layout. Bright, crisp lighting emphasizing the sharp edges of the card against the minimal background. Clean UI aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0ujg9ks8Ph7SYmJjq_jQdsz7hVMZeYpH-BwxW2gk_OY_d-JqTYk8N6Y2E6p1ikawpGDtvm5b5IoWhTZai7LchKzouIfq4tIAp8zLDnNUdnM87QzP-NWCxe7qLx_zK_WdTJx1Go0VMZmN5y3ar4odngRVcehLfmzFtMuXpuqDpmyB9hsqPB798X28EVohegXppnEsE_vJPJImaerOtvxtfsKAAuWpafugB9bFkq7WAVRz8ai1-Fb__OjA2oodjCsefNkG3_xGPXAkiY8"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-3">
+<button class="w-full py-4 rounded-xl font-label-caps text-label-caps font-bold text-white tracking-wider flex justify-center items-center gap-2 bg-[#2E7D32] hover:bg-[#1B5E20] transition-colors">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        PHÊ DUYỆT
+                    </button>
+<button class="w-full py-4 rounded-xl font-label-caps text-label-caps font-bold text-error tracking-wider flex justify-center items-center gap-2 border-2 border-error bg-white hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                        TỪ CHỐI
+                    </button>
+</div>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-dim text-primary dark:text-primary-fixed-dim font-label-caps text-label-caps fixed bottom-0 w-full z-50 rounded-t-xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] bg-surface-container-lowest dark:bg-surface-dim shadow-lg fixed bottom-0 left-0 right-0 w-full max-w-max-width mx-auto flex justify-around items-center py-3 px-4">
+<!-- Overview (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant dark:hover:bg-on-surface-variant transition-colors rounded-xl p-2 w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="truncate w-full text-center">Overview</span>
+</button>
+<!-- Approvals (Active) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 hover:bg-surface-variant dark:hover:bg-on-surface-variant transition-colors Active: scale-90 duration-150">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+<span class="truncate w-full text-center">Approvals</span>
+</button>
+<!-- Users (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant dark:hover:bg-on-surface-variant transition-colors rounded-xl p-2 w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">group</span>
+<span class="truncate w-full text-center">Users</span>
+</button>
+</nav>
+</div>
+</body></html>

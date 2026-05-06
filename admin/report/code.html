@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tổng Quan Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "tertiary-fixed-dim": "#b9c7e0",
+                            "on-surface-variant": "#584237",
+                            "primary-fixed": "#ffdbca",
+                            "tertiary-container": "#8d9bb2",
+                            "inverse-on-surface": "#f0f1f2",
+                            "on-primary-fixed": "#341100",
+                            "secondary-fixed-dim": "#bec5e5",
+                            "surface-bright": "#f8f9fa",
+                            "on-tertiary-fixed-variant": "#3a485c",
+                            "surface-variant": "#e1e3e4",
+                            "on-primary": "#ffffff",
+                            "surface-container-highest": "#e1e3e4",
+                            "on-tertiary-container": "#253346",
+                            "outline": "#8c7164",
+                            "surface-container": "#edeeef",
+                            "tertiary": "#515f74",
+                            "outline-variant": "#e0c0b1",
+                            "on-secondary-container": "#5a627e",
+                            "surface-container-lowest": "#ffffff",
+                            "secondary-fixed": "#dbe1ff",
+                            "on-primary-fixed-variant": "#783200",
+                            "on-secondary-fixed": "#131a33",
+                            "inverse-primary": "#ffb690",
+                            "on-background": "#191c1d",
+                            "background": "#f8f9fa",
+                            "primary": "#9d4300",
+                            "surface-container-low": "#f3f4f5",
+                            "on-primary-container": "#582200",
+                            "primary-fixed-dim": "#ffb690",
+                            "on-surface": "#191c1d",
+                            "error": "#ba1a1a",
+                            "surface-dim": "#d9dadb",
+                            "surface-container-high": "#e7e8e9",
+                            "secondary": "#565d79",
+                            "inverse-surface": "#2e3132",
+                            "on-secondary": "#ffffff",
+                            "on-secondary-fixed-variant": "#3e4660",
+                            "surface": "#f8f9fa",
+                            "tertiary-fixed": "#d5e3fd",
+                            "secondary-container": "#d8deff",
+                            "error-container": "#ffdad6",
+                            "surface-tint": "#9d4300",
+                            "on-tertiary-fixed": "#0d1c2f",
+                            "primary-container": "#f97316",
+                            "on-error": "#ffffff",
+                            "on-tertiary": "#ffffff",
+                            "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "section-margin": "32px",
+                            "container-padding": "24px",
+                            "stack-gap": "16px",
+                            "max-width": "480px"
+                    },
+                    "fontFamily": {
+                            "display-lg": [
+                                    "Inter"
+                            ],
+                            "label-caps": [
+                                    "Inter"
+                            ],
+                            "body-sm": [
+                                    "Inter"
+                            ],
+                            "body-lg": [
+                                    "Inter"
+                            ],
+                            "headline-md": [
+                                    "Inter"
+                            ]
+                    },
+                    "fontSize": {
+                            "display-lg": [
+                                    "30px",
+                                    {
+                                            "lineHeight": "36px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "label-caps": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "16px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "body-sm": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "20px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "600"
+                                    }
+                            ]
+                    }
+            },
+                },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: theme('colors.background');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased text-on-surface bg-background flex flex-col items-center justify-start min-h-screen pb-24">
+<!-- Mobile Container -->
+<div class="w-full max-w-max-width bg-background relative min-h-screen overflow-hidden shadow-2xl">
+<!-- TopAppBar -->
+<header class="bg-on-secondary-fixed dark:bg-on-secondary-fixed text-on-primary dark:text-primary-fixed-dim full-width top-0 rounded-b-[32px] h-48 flat no shadows flex justify-between items-start px-container-padding pt-8 w-full max-w-max-width mx-auto relative z-0">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold">UniEats Admin</h1>
+</div>
+<div class="flex items-center">
+<button class="hover:opacity-80 transition-opacity bg-surface-container-highest rounded-full w-8 h-8 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">person</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="relative z-10 px-container-padding -mt-20">
+<!-- Central Card Overlap -->
+<div class="bg-surface-container-lowest rounded-[32px] p-container-padding shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-gap">Tổng Quan</h2>
+<!-- 2x2 Grid Stats -->
+<div class="grid grid-cols-2 gap-4 mb-section-margin">
+<!-- Stat 1 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl">group</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Người dùng</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">1,240</span>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl">storefront</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cửa hàng</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">42</span>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl">pending_actions</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Chờ duyệt</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">5</span>
+</div>
+<!-- Stat 4 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Doanh thu</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">45Mđ</span>
+</div>
+</div>
+<!-- Line Chart Placeholder Area -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Đơn hàng hàng ngày</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded">30 NGÀY QUA</span>
+</div>
+<div class="w-full h-48 bg-surface-container-low rounded-xl relative overflow-hidden flex items-end justify-between px-2 pb-2 pt-8">
+<!-- Abstract bars for chart representation -->
+<div class="w-1/6 bg-tertiary-container rounded-t-sm h-[40%] opacity-50"></div>
+<div class="w-1/6 bg-tertiary-container rounded-t-sm h-[60%] opacity-50"></div>
+<div class="w-1/6 bg-tertiary-container rounded-t-sm h-[30%] opacity-50"></div>
+<div class="w-1/6 bg-tertiary-container rounded-t-sm h-[80%] opacity-50"></div>
+<div class="w-1/6 bg-primary rounded-t-sm h-[90%]"></div>
+<div class="w-1/6 bg-tertiary-container rounded-t-sm h-[50%] opacity-50"></div>
+<!-- Connecting Line visual (abstract) -->
+<svg class="absolute top-0 left-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="text-primary opacity-80" d="M 0,60 L 20,40 L 40,70 L 60,20 L 80,10 L 100,50" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-dim text-primary dark:text-primary-fixed-dim font-label-caps text-label-caps font-display-lg text-display-lg fixed bottom-0 w-full z-50 rounded-t-xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.08)] shadow-lg fixed bottom-0 left-0 right-0 w-full max-w-max-width mx-auto flex justify-around items-center py-3 px-4">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 hover:opacity-80 transition-opacity Active: scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="mt-1">Overview</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant dark:hover:bg-on-surface-variant transition-colors px-6 py-1 rounded-full" href="#">
+<span class="material-symbols-outlined text-2xl">fact_check</span>
+<span class="mt-1">Approvals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant dark:hover:bg-on-surface-variant transition-colors px-6 py-1 rounded-full" href="#">
+<span class="material-symbols-outlined text-2xl">group</span>
+<span class="mt-1">Users</span>
+</a>
+</nav>
+</div>
+</body></html>
